@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Randomizador : MonoBehaviour
 {
+    public GameManager gameManager;
+    public Bolas bolas;
     public int cantidadBolas = 1;
+    public float randomBola;
     public float randomx;
     public float randomz;
     public GameObject bolaNegraPrefab;
@@ -19,6 +22,13 @@ public class Randomizador : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             Randomizar();
+        }
+    }
+    void Randomizar()
+    {
+        randomBola = Random.Range(1, 15);
+        randomx = Random.Range(-8, 9);
+        randomz = Random.Range(-3, 4);
             Debug.Log("Bolas creada");
             for (int i = 0; i < cantidadBolas; i++)
             {
@@ -26,14 +36,5 @@ public class Randomizador : MonoBehaviour
                 Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
                 rb.AddForce(transform.forward * 0);
             }
-
-        }
-    }
-    void Randomizar()
-    {
-        
-        
-            randomx = Random.Range(-8, 9);
-            randomz = Random.Range(-3, 4);
     }
 }

@@ -6,11 +6,13 @@ public class GameManager : MonoBehaviour
 {
     public int tiros;
     public float fuerza;
+    public int puntuacion;
     // Start is called before the first frame update
     void Start()
     {
         tiros = 10;
         fuerza = 2;
+        puntuacion = 0;
     }
 
     // Update is called once per frame
@@ -18,11 +20,7 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    void MeterBlanca()
-    { 
-        
-    }
-    void Perder()
+    public void Perder()
     {
         Debug.Log("Has perdido");
     }

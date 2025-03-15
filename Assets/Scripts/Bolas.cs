@@ -5,8 +5,9 @@ public class Bolas : MonoBehaviour
 {
     public int numero;
     public bool tipo;
+
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+    }
 }
-/*void OnTriggerEnter(Collider other)
-{ 
-        
-}/*
