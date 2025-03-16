@@ -8,6 +8,7 @@ public class Bolas : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        Destroy(gameObject);
+        Debug.Log("GOL");
     }
 }

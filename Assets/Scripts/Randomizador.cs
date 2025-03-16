@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Randomizador : MonoBehaviour
 {
-    public GameManager gameManager;
+    public BolasManager bolasManager;
     public Bolas bolas;
-    public int cantidadBolas = 1;
+    public Hoyo hoyo;
     public float randomBola;
     public float randomx;
     public float randomz;
@@ -13,7 +13,7 @@ public class Randomizador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -26,15 +26,20 @@ public class Randomizador : MonoBehaviour
     }
     void Randomizar()
     {
+        //Quitando el número 8
         randomBola = Random.Range(1, 15);
         randomx = Random.Range(-8, 9);
         randomz = Random.Range(-3, 4);
-            Debug.Log("Bolas creada");
-            for (int i = 0; i < cantidadBolas; i++)
-            {
-                GameObject tiroTemporal = Instantiate(bolaNegraPrefab, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
-                Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * 0);
-            }
+        Debug.Log("Bolas creada");
+        for (int i = 0; i < hoyo.bolasEnLaMesa - 1; i++)
+        {//bolas[randomBola]
+            GameObject tiroTemporal = Instantiate(bolaNegraPrefab, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
+            Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+        }
+        //Bola negra
+        {
+            GameObject tiroTemporal = Instantiate(bolaNegraPrefab, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
+            Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+        }
     }
 }

@@ -19,9 +19,9 @@ public class Hoyo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    void meterBola()
+    public void MeterBola()
     {
         gameManager.puntuacion = gameManager.puntuacion + multiplicador * bolas.numero;
         if (bolasEnLaMesa > 0)
@@ -36,16 +36,23 @@ public class Hoyo : MonoBehaviour
             {
                 gameManager.Perder();
             }
+            Debug.Log("PUNTUACIÓN: " + gameManager.puntuacion);
         }
         else if (bolasEnLaMesa == 0)
         {
-            siguienteFase();
+            SiguienteFase();
         }
     }
-    void siguienteFase()
-    { 
+    void SiguienteFase()
+    {
         //Eliminar bolas
         //Instanciar Bolas
     }
-    
+    void OnTriggerEnter(Collider other)
+    {
+        bolas = other.gameObject.GetComponent<Bolas>();
+        MeterBola();
+        Debug.Log(bolas);
+    }
+
 }

@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class BolasManager : MonoBehaviour
 {
-    //public List <Bolas> bolas;
-
+    public List <Bolas> bolas;
 }

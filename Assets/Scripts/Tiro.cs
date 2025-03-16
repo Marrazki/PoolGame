@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tiro : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class Tiro : MonoBehaviour
     public Vector3 prevPos;
     public Vector3 currVel;
     public GameManager gameManager;
+    public float friccion;
     void Start()
     {
         gameManager.tiros = 10;
+        friccion = 1;
     }
     void Update()
     {
@@ -45,15 +48,18 @@ public class Tiro : MonoBehaviour
                     Debug.Log(gameManager.tiros);
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
                     gravedad.bolaQuieta = false;
-                    
-                    /*GameObject tiroTemporal = Instantiate(tiroPrefab, tiroInicio.transform.position, tiroInicio.transform.rotation) as GameObject;
-                    Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
-                    rb.AddForce(transform.forward * 1000 * fuerza);
-                    Destroy(tiroTemporal, 0.3f);
-                    Debug.Log("Tiro destruido");*/
+
                 }
+
             }
         }
-        //}
+        if (gravedad.bolaQuieta == false)
+        {/*
+            bolaBlancaRb.velocity = bolaBlancaRb.velocity * (1f - friccion * Time.fixedDeltaTime);
+            if (bolaBlancaRb.velocity.magnitude < 0.1)
+            {
+                bolaBlancaRb.velocity = Vector3.zero;
+            }*/
+        }
     }
 }

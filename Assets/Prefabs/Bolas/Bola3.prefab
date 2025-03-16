@@ -149,5 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dfb3666b5523d46a8ad5483daef955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoyo: {fileID: 9059765197610132321, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
   numero: 3
   tipo: 0
