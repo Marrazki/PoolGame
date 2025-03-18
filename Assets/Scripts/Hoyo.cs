@@ -6,14 +6,12 @@ public class Hoyo : MonoBehaviour
 {
     public GameManager gameManager;
     public Bolas bolas;
-    public int bolasEnLaMesa;
-    public int multiplicador;
-    public int fase;
+    public GameObject bolaBlanca;
     // Start is called before the first frame update
     void Start()
     {
-        fase = 1;
-        multiplicador = 1;
+        gameManager.fase = 1;
+        gameManager.multiplicador = 1;
     }
 
     // Update is called once per frame
@@ -21,38 +19,42 @@ public class Hoyo : MonoBehaviour
     {
 
     }
-    public void MeterBola()
+    public void MeterBola(Bolas bola)
     {
-        gameManager.puntuacion = gameManager.puntuacion + multiplicador * bolas.numero;
-        if (bolasEnLaMesa > 0)
+        gameManager.puntuacion = gameManager.puntuacion + gameManager.multiplicador * bola.numero;
+        if (bola.numero == 0)//Si es la blanca
         {
-            if (bolas.numero == 0)
+            if (gameManager.bolasEnLaMesa > 0)
             {
-                //Mover bolaBlanca a (8,4.5,0);
-                //Mult a X1
-                multiplicador = 1;
-            }
-            if (bolas.numero == 8)
+                bolaBlanca.transform.position = new Vector3(8, 4.5f, 0);//Mover bolaBlanca a (8,4.5,0);
+                gameManager.multiplicador = 1;//Mult a X1
+            }        
+            else if (gameManager.bolasEnLaMesa == 0)
+        {
+                gameManager.SiguienteFase();
+        }
+        }
+        if (bola.numero == 8)//Si es negra
+        {
+            if (gameManager.bolasEnLaMesa > 1)
             {
                 gameManager.Perder();
             }
-            Debug.Log("PUNTUACIÓN: " + gameManager.puntuacion);
+            else if (gameManager.bolasEnLaMesa == 1)
+            {
+                gameManager.SiguienteFase();
+            }
+
         }
-        else if (bolasEnLaMesa == 0)
-        {
-            SiguienteFase();
-        }
+        Debug.Log("PUNTUACIÓN: " + gameManager.puntuacion);
+
+
+
     }
-    void SiguienteFase()
-    {
-        //Eliminar bolas
-        //Instanciar Bolas
-    }
+    
     void OnTriggerEnter(Collider other)
     {
-        bolas = other.gameObject.GetComponent<Bolas>();
-        MeterBola();
-        Debug.Log(bolas);
+        MeterBola(other.gameObject.GetComponent<Bolas>());
     }
 
 }

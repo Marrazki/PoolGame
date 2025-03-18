@@ -1478,6 +1478,10 @@ MonoBehaviour:
   tiros: 0
   fuerza: 2
   puntuacion: 0
+  bolasEnLaMesa: 0
+  bolasQueCrear: 0
+  multiplicador: 0
+  fase: 0
 --- !u!4 &888833500
 Transform:
   m_ObjectHideFlags: 0
@@ -2851,7 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bolasManager: {fileID: 1740797937}
-  bolas: {fileID: 0}
+  gameManager: {fileID: 888833499}
   hoyo: {fileID: 430777094}
   randomBola: 0
   randomx: 0
@@ -3462,6 +3466,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6924337908703284819, guid: fcd3b31e4b75cb2469102727970f7d61, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6924337908703284819, guid: fcd3b31e4b75cb2469102727970f7d61, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3482,67 +3494,67 @@ PrefabInstance:
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[0]'
       value: 
-      objectReference: {fileID: -2000559904429485810, guid: 962a7bba3cdc5804f87828380819a7d6, type: 3}
+      objectReference: {fileID: 2482572150453692796, guid: fcd3b31e4b75cb2469102727970f7d61, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[1]'
       value: 
-      objectReference: {fileID: 2916465037605378364, guid: 52647c9b73d0a364aad7519d75fc01d5, type: 3}
+      objectReference: {fileID: -2000559904429485810, guid: 962a7bba3cdc5804f87828380819a7d6, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[2]'
       value: 
-      objectReference: {fileID: 7972381586992171129, guid: 2058421328df7454db6d51f28e6707ef, type: 3}
+      objectReference: {fileID: 2916465037605378364, guid: 52647c9b73d0a364aad7519d75fc01d5, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[3]'
       value: 
-      objectReference: {fileID: -8695422411618647730, guid: ded7e8c7f7a1bad43a7f64ef4469ff8e, type: 3}
+      objectReference: {fileID: 7972381586992171129, guid: 2058421328df7454db6d51f28e6707ef, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[4]'
       value: 
-      objectReference: {fileID: 803263825149921551, guid: 3d7ef25651f30f841bc31519415c500a, type: 3}
+      objectReference: {fileID: -8695422411618647730, guid: ded7e8c7f7a1bad43a7f64ef4469ff8e, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[5]'
       value: 
-      objectReference: {fileID: 4497214835714910874, guid: 43df54ee285b7be4ab13de58a6bb21ea, type: 3}
+      objectReference: {fileID: 803263825149921551, guid: 3d7ef25651f30f841bc31519415c500a, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[6]'
       value: 
-      objectReference: {fileID: -8379611926898021331, guid: cc14b92bc20a4ec4d94b792046d3b236, type: 3}
+      objectReference: {fileID: 4497214835714910874, guid: 43df54ee285b7be4ab13de58a6bb21ea, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[7]'
       value: 
-      objectReference: {fileID: -3699634421316049038, guid: e04f7f17af6abde44b1636f3ad7869c5, type: 3}
+      objectReference: {fileID: -8379611926898021331, guid: cc14b92bc20a4ec4d94b792046d3b236, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[8]'
       value: 
-      objectReference: {fileID: -4602323310510723243, guid: 0ae06f19447791742961734c01221aa4, type: 3}
+      objectReference: {fileID: -3699634421316049038, guid: e04f7f17af6abde44b1636f3ad7869c5, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[9]'
       value: 
-      objectReference: {fileID: 6476704124595599203, guid: 30faff1a4f851ee4b86bb317ca269bc6, type: 3}
+      objectReference: {fileID: -4602323310510723243, guid: 0ae06f19447791742961734c01221aa4, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[10]'
       value: 
-      objectReference: {fileID: -4310376292933502192, guid: 97358331f50e84e458ac2a3793609ec1, type: 3}
+      objectReference: {fileID: 6476704124595599203, guid: 30faff1a4f851ee4b86bb317ca269bc6, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[11]'
       value: 
-      objectReference: {fileID: -3675012294963989543, guid: 6655923433256184380735c00084d11f, type: 3}
+      objectReference: {fileID: -4310376292933502192, guid: 97358331f50e84e458ac2a3793609ec1, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[12]'
       value: 
-      objectReference: {fileID: 9005160132657131944, guid: 35a8bfa2a14f5b74db2c5cc45d32818b, type: 3}
+      objectReference: {fileID: -3675012294963989543, guid: 6655923433256184380735c00084d11f, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[13]'
       value: 
-      objectReference: {fileID: 5022227710854106905, guid: 8f68ba6c159e0a0438cd9ab43bb5f1a2, type: 3}
+      objectReference: {fileID: 9005160132657131944, guid: 35a8bfa2a14f5b74db2c5cc45d32818b, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[14]'
       value: 
-      objectReference: {fileID: -5960948629686124513, guid: 0e2ec5120382d7a45b37b8723c41b4e5, type: 3}
+      objectReference: {fileID: 5022227710854106905, guid: 8f68ba6c159e0a0438cd9ab43bb5f1a2, type: 3}
     - target: {fileID: 1861616824835523257, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: 'bolas.Array.data[15]'
       value: 
-      objectReference: {fileID: 2482572150453692796, guid: fcd3b31e4b75cb2469102727970f7d61, type: 3}
+      objectReference: {fileID: -5960948629686124513, guid: 0e2ec5120382d7a45b37b8723c41b4e5, type: 3}
     - target: {fileID: 2712604409168310187, guid: 36cf88608a9a46a459e18d5a27c8e433, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.6154842
@@ -3644,6 +3656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoyoTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 9059765197610132321, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
+      propertyPath: bolaBlanca
+      value: 
+      objectReference: {fileID: 1280142993}
     - target: {fileID: 9059765197610132321, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
       propertyPath: gameManager
       value: 

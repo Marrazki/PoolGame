@@ -45,13 +45,14 @@ public class Tiro : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     gameManager.tiros--;
-                    Debug.Log(gameManager.tiros);
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
+                    
                     gravedad.bolaQuieta = false;
                 }
 
             }
         }
+        //Debug.Log(bolaBlancaRb.linearVelocity);
         if (gravedad.bolaQuieta == false)
         {/*
             bolaBlancaRb.velocity = bolaBlancaRb.velocity * (1f - friccion * Time.fixedDeltaTime);

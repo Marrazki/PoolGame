@@ -4,9 +4,9 @@ using UnityEngine;
 public class Randomizador : MonoBehaviour
 {
     public BolasManager bolasManager;
-    public Bolas bolas;
+    public GameManager gameManager;
     public Hoyo hoyo;
-    public float randomBola;
+    public int randomBola;
     public float randomx;
     public float randomz;
     public GameObject bolaNegraPrefab;
@@ -31,15 +31,17 @@ public class Randomizador : MonoBehaviour
         randomx = Random.Range(-8, 9);
         randomz = Random.Range(-3, 4);
         Debug.Log("Bolas creada");
-        for (int i = 0; i < hoyo.bolasEnLaMesa - 1; i++)
+        for (int i = 0; i < gameManager.bolasEnLaMesa - 1; i++)
         {//bolas[randomBola]
-            GameObject tiroTemporal = Instantiate(bolaNegraPrefab, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
+            GameObject tiroTemporal = Instantiate(bolasManager.bolas[randomBola].gameObject, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
             Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+            gameManager.bolasEnLaMesa++;
         }
         //Bola negra
         {
-            GameObject tiroTemporal = Instantiate(bolaNegraPrefab, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
+            GameObject tiroTemporal = Instantiate(bolasManager.bolas[8].gameObject, new Vector3(randomx, 5, randomz), bolaNegraPrefab.transform.rotation) as GameObject;
             Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+            gameManager.bolasEnLaMesa++;
         }
     }
 }
