@@ -48,7 +48,6 @@ public class Tiro : MonoBehaviour
                     Debug.Log(gameManager.tiros);
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
                     gravedad.bolaQuieta = false;
-
                 }
 
             }

@@ -10,7 +10,7 @@ public class Gravedad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,29 +18,27 @@ public class Gravedad : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            PararBola();
         }
-        if (rb.linearVelocity.magnitude > 4)
-        {
-            if (bolaQuieta == false)
-            {
-                Debug.Log("velocidad: " + rb.linearVelocity.magnitude);
-                if (rb.linearVelocity.magnitude < 4)
-                {
-                    bolaQuieta = true;
-                    rb.linearVelocity = Vector3.zero;
-                    rb.angularVelocity = Vector3.zero;
 
-                    //PararBola();
-                    Debug.Log("Bola quieta");
-                }
+        if (bolaQuieta == false)
+        {
+            Debug.Log("velocidad: " + rb.linearVelocity.magnitude);
+            Debug.Log("angular: " + rb.angularVelocity.magnitude);
+            rb.linearVelocity = rb.linearVelocity * 0.999f;
+            rb.angularVelocity = rb.angularVelocity * 0.999f; ;
+            if (rb.linearVelocity.magnitude <= 1)
+            {
+                PararBola();
             }
         }
-        //rb.AddForce (new Vector3(0, 100 * gravedad * Time.deltaTime, 0));
     }
-    void PararBola() 
-    {
+    //rb.AddForce (new Vector3(0, 100 * gravedad * Time.deltaTime, 0));
+void PararBola()
+{
+    rb.linearVelocity = Vector3.zero;
+    rb.angularVelocity = Vector3.zero;
+    bolaQuieta = true;
 
-    }
+}
 }
