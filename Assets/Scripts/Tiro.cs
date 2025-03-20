@@ -5,15 +5,14 @@ using UnityEngine.EventSystems;
 
 public class Tiro : MonoBehaviour
 {
+    public GameManager gameManager;
+    public Hoyo hoyo;
     public Gravedad gravedad;
-    public GameObject tiroPrefab;
     public GameObject tiroInicio;
-    public Rigidbody tiroRigidbody;
     public Rigidbody bolaBlancaRb;
     public GameObject bolaBlanca;
     public Vector3 prevPos;
     public Vector3 currVel;
-    public GameManager gameManager;
     public float friccion;
     void Start()
     {
@@ -46,8 +45,12 @@ public class Tiro : MonoBehaviour
                 {
                     gameManager.tiros--;
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
-                    
                     gravedad.bolaQuieta = false;
+                    if (hoyo.bolasMetidasPorTiro == 0)
+                    {
+                        gameManager.multiplicador = 0;
+                    }
+                    hoyo.bolasMetidasPorTiro = 0;
                 }
 
             }

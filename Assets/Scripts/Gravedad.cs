@@ -34,11 +34,11 @@ public class Gravedad : MonoBehaviour
         }
     }
     //rb.AddForce (new Vector3(0, 100 * gravedad * Time.deltaTime, 0));
-void PararBola()
-{
-    rb.linearVelocity = Vector3.zero;
-    rb.angularVelocity = Vector3.zero;
-    bolaQuieta = true;
+    public void PararBola()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        bolaQuieta = true;
 
-}
+    }
 }

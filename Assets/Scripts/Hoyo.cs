@@ -4,54 +4,67 @@ using UnityEngine;
 
 public class Hoyo : MonoBehaviour
 {
+    public Gravedad gravedad;
     public GameManager gameManager;
     public Bolas bolas;
     public GameObject bolaBlanca;
+    public int bolasMetidasPorTiro;
+    public int bolasMetidasPorTiroAnterior;
     // Start is called before the first frame update
     void Start()
     {
         gameManager.fase = 1;
         gameManager.multiplicador = 1;
+        bolasMetidasPorTiro = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("Bolas metidas por tiro: " + bolasMetidasPorTiro);
+        Debug.Log("Bolas en la mesa: " + gameManager.bolasEnLaMesa);
     }
     public void MeterBola(Bolas bola)
     {
+        float ElevadoTemp = Mathf.Pow(2, bolasMetidasPorTiro);
+        int DosElevadoABola =Mathf.RoundToInt(ElevadoTemp);
+        gameManager.multiplicador = gameManager.multiplicador * DosElevadoABola;
         gameManager.puntuacion = gameManager.puntuacion + gameManager.multiplicador * bola.numero;
         if (bola.numero == 0)//Si es la blanca
         {
             if (gameManager.bolasEnLaMesa > 0)
             {
+                gravedad.bolaQuieta = true;
                 bolaBlanca.transform.position = new Vector3(8, 4.5f, 0);//Mover bolaBlanca a (8,4.5,0);
+                gravedad.PararBola();
+                bolasMetidasPorTiro = 0;
                 gameManager.multiplicador = 1;//Mult a X1
-            }        
+            }
             else if (gameManager.bolasEnLaMesa == 0)
-        {
+            {
                 gameManager.SiguienteFase();
+            }
         }
-        }
-        if (bola.numero == 8)//Si es negra
+        else if (bola.numero == 8)//Si es negra
         {
             if (gameManager.bolasEnLaMesa > 1)
             {
+                gameManager.bolasEnLaMesa--;
                 gameManager.Perder();
             }
             else if (gameManager.bolasEnLaMesa == 1)
             {
+                bolasMetidasPorTiro++;
                 gameManager.SiguienteFase();
             }
-
         }
-        Debug.Log("PUNTUACIÓN: " + gameManager.puntuacion);
-
-
-
+        else//Si no es ni negra ni blanca
+        {
+            gameManager.bolasEnLaMesa--;
+            bolasMetidasPorTiro++;
+        }
     }
-    
+
     void OnTriggerEnter(Collider other)
     {
         MeterBola(other.gameObject.GetComponent<Bolas>());

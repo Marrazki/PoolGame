@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Randomizador randomizador;
+    public Hoyo hoyo;
     public int tiros;
     public float fuerza;
     public int puntuacion;
@@ -29,13 +31,17 @@ public class GameManager : MonoBehaviour
     public void Perder()
     {
         Debug.Log("Has perdido");
+        fase = 0;
+        bolasQueCrear = 1;
     }
     public void SiguienteFase()
     {
         Debug.Log("Siguiente Fase, fase " + fase);
+        tiros = 10;
+        hoyo.bolasMetidasPorTiro = 0;
+        multiplicador = 1;//Mult a X1
         fase++;
         bolasQueCrear++;
-        //Eliminar bolas
-        //Instanciar Bolas
+        randomizador.Randomizar();
     }
 }
