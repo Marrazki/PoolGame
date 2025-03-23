@@ -7,6 +7,6 @@ public class AlphaTester : MonoBehaviour
 {
     void OnGUI()
     {
-        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f; ;
     }
 }

@@ -63,6 +63,8 @@ public class Hoyo : MonoBehaviour
             gameManager.bolasEnLaMesa--;
             bolasMetidasPorTiro++;
         }
+        bolasMetidasPorTiroAnterior += bolasMetidasPorTiro;
+        bolasMetidasPorTiro = 0;
     }
 
     void OnTriggerEnter(Collider other)

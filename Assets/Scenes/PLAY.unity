@@ -2503,7 +2503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiroAnimacionPrefab: {fileID: 5121376849212427296, guid: 0062c25cc8c2bfe40a3dd632e2d1fb1a, type: 3}
   tiroAnimacionInicio: {fileID: 1473795966}
-  tiroAnimacionRigidbody: {fileID: 1487429611082558632, guid: 0062c25cc8c2bfe40a3dd632e2d1fb1a, type: 3}
+  tiroAnimacionRigidbody: {fileID: 3392598262446655299, guid: 0062c25cc8c2bfe40a3dd632e2d1fb1a, type: 3}
 --- !u!23 &1473795969
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3754,10 +3754,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1134796228565848271, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
+      propertyPath: m_TagString
+      value: GAMEMANAGER
+      objectReference: {fileID: 0}
     - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
       propertyPath: hoyo
       value: 
       objectReference: {fileID: 430777094}
+    - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 888833499}
     - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
       propertyPath: randomizador
       value: 

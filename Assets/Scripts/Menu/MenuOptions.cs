@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class BolaMenuImagen : MonoBehaviour
+public class MenuOptions : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +13,9 @@ public class BolaMenuImagen : MonoBehaviour
     void Update()
     {
         
+    }
+    public void GoToMenu()
+    {
+        SceneManager.LoadSceneAsync("MENU");
     }
 }

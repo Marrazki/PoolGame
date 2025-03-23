@@ -17,6 +17,6 @@ public class Menu : MonoBehaviour
     }
     public void Options()
     {
-        
+        SceneManager.LoadSceneAsync("OPTIONS");
     }
 }

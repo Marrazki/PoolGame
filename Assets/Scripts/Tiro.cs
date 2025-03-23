@@ -46,11 +46,11 @@ public class Tiro : MonoBehaviour
                     gameManager.tiros--;
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
                     gravedad.bolaQuieta = false;
-                    if (hoyo.bolasMetidasPorTiro == 0)
+                    if (hoyo.bolasMetidasPorTiroAnterior == 0)
                     {
-                        gameManager.multiplicador = 0;
+                        hoyo.bolasMetidasPorTiro = 0;
                     }
-                    hoyo.bolasMetidasPorTiro = 0;
+                    hoyo.bolasMetidasPorTiroAnterior = 0;
                 }
 
             }

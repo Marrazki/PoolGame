@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     public Randomizador randomizador;
     public Hoyo hoyo;
     public int tiros;
@@ -14,6 +16,19 @@ public class GameManager : MonoBehaviour
     public int multiplicador;
     public int fase;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        //Singleton
+        //if (GameManager.Instance == null)
+        //{
+        //    GameManager.Instance = this;
+        //    DontDestroyOnLoad(this.gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+    }
     void Start()
     {
         tiros = 10;
@@ -26,13 +41,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (tiros == 0)
+        {
+            Perder();
+        }
     }
     public void Perder()
     {
         Debug.Log("Has perdido");
-        fase = 0;
+        SceneManager.LoadSceneAsync("YOULOSE");
         bolasQueCrear = 1;
+        tiros++;
     }
     public void SiguienteFase()
     {
