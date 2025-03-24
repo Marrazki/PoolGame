@@ -14,6 +14,11 @@ public class Tiro : MonoBehaviour
     public Vector3 prevPos;
     public Vector3 currVel;
     public float friccion;
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+    }
     void Start()
     {
         gameManager.tiros = 10;
@@ -43,6 +48,7 @@ public class Tiro : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    audioManager.PlaySFX(audioManager.tiro);
                     gameManager.tiros--;
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
                     gravedad.bolaQuieta = false;
