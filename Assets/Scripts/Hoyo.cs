@@ -10,6 +10,11 @@ public class Hoyo : MonoBehaviour
     public GameObject bolaBlanca;
     public int bolasMetidasPorTiro;
     public int bolasMetidasPorTiroAnterior;
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +31,7 @@ public class Hoyo : MonoBehaviour
     }
     public void MeterBola(Bolas bola)
     {
+        audioManager.PlaySFX(audioManager.hoyo);
         float ElevadoTemp = Mathf.Pow(2, bolasMetidasPorTiro);
         int DosElevadoABola =Mathf.RoundToInt(ElevadoTemp);
         gameManager.multiplicador = gameManager.multiplicador * DosElevadoABola;

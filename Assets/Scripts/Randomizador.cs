@@ -10,6 +10,11 @@ public class Randomizador : MonoBehaviour
     public float randomx;
     public float randomz;
     public GameObject bolaBlanca;
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +44,7 @@ public class Randomizador : MonoBehaviour
             }
             GameObject tiroTemporal = Instantiate(bolasManager.bolas[randomBola].gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
             Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+            audioManager.PlaySFX(audioManager.CrearBola);
         }
         //Bola negra
         {

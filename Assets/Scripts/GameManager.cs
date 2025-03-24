@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tiros == 0)
+        if (tiros < 0)
         {
             Perder();
         }

@@ -2574,7 +2574,7 @@ GameObject:
   - component: {fileID: 1442004377}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AUDIO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2615,7 +2615,7 @@ MonoBehaviour:
   hoyo: {fileID: 8300000, guid: a279661e615965d4ab15d8fdb35e2c29, type: 3}
   CrearBola: {fileID: 8300000, guid: 2a5a2ec5beeaaf546a1fcef7bb349ad0, type: 3}
   choque: {fileID: 8300000, guid: b8686311e56ac2146b0a62adfe7ada2f, type: 3}
-  Click: {fileID: 0}
+  Click: {fileID: 8300000, guid: 3fb969f1edb8cf344bc4b605e4b10a91, type: 3}
 --- !u!1 &1467871757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4331,7 +4331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3473237856837256016, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 3473237856837256016, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4368,6 +4368,10 @@ PrefabInstance:
     - target: {fileID: 6470359395498181398, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
       propertyPath: m_Name
       value: HoyoTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657824040751129535, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9059765197610132321, guid: 318abd3418169f842b38a7834d0094f2, type: 3}
       propertyPath: gravedad

@@ -44,7 +44,7 @@ public class Tiro : MonoBehaviour
         }
         if (gravedad.bolaQuieta == true)
         {
-            if (gameManager.tiros >= 1)
+            if (gameManager.tiros >= 0)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
