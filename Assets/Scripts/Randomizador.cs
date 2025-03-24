@@ -32,7 +32,6 @@ public class Randomizador : MonoBehaviour
     public void Randomizar()
     {
         gameManager.bolasEnLaMesa = gameManager.bolasQueCrear;
-        Debug.Log("Bolas creada");
         for (int i = 0; i < gameManager.bolasEnLaMesa - 1; i++)
         { 
             randomx = Random.Range(-8, 9);
