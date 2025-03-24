@@ -9,7 +9,6 @@ public class Hoyo : MonoBehaviour
     public Bolas bolas;
     public GameObject bolaBlanca;
     public int bolasMetidasPorTiro;
-    public int bolasMetidasPorTiroAnterior;
     AudioManager audioManager;
     private void Awake()
     {
@@ -26,15 +25,13 @@ public class Hoyo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("Bolas metidas: " + bolasMetidasPorTiro);
     }
     public void MeterBola(Bolas bola)
     {
         audioManager.PlaySFX(audioManager.hoyo);
-        float ElevadoTemp = Mathf.Pow(2, bolasMetidasPorTiro);
-        int DosElevadoABola =Mathf.RoundToInt(ElevadoTemp);
-        gameManager.multiplicador = gameManager.multiplicador * DosElevadoABola;
-        gameManager.puntuacion = gameManager.puntuacion + gameManager.multiplicador * bola.numero;
+        gameManager.multiplicador = gameManager.multiplicador + bolasMetidasPorTiro;
+        gameManager.puntuacion += gameManager.multiplicador * bola.numero;
         if (bola.numero == 0)//Si es la blanca
         {
             if (gameManager.bolasEnLaMesa > 0)
@@ -68,8 +65,6 @@ public class Hoyo : MonoBehaviour
             gameManager.bolasEnLaMesa--;
             bolasMetidasPorTiro++;
         }
-        bolasMetidasPorTiroAnterior += bolasMetidasPorTiro;
-        bolasMetidasPorTiro = 0;
     }
 
     void OnTriggerEnter(Collider other)

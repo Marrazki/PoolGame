@@ -1590,7 +1590,6 @@ MonoBehaviour:
   bolaBlanca: {fileID: 1280142993}
   prevPos: {x: 0, y: 0, z: 0}
   currVel: {x: 0, y: 0, z: 0}
-  friccion: 0
 --- !u!1001 &716566930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4418,6 +4417,10 @@ PrefabInstance:
       propertyPath: hoyo
       value: 
       objectReference: {fileID: 430777094}
+    - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
+      propertyPath: gravedad
+      value: 
+      objectReference: {fileID: 1280143000}
     - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
       propertyPath: gameManager
       value: 

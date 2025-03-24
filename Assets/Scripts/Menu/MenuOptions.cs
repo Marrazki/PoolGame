@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour
 {
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +21,7 @@ public class MenuOptions : MonoBehaviour
     }
     public void GoToMenu()
     {
+        audioManager.PlaySFX(audioManager.Click);
         SceneManager.LoadSceneAsync("MENU");
     }
 }

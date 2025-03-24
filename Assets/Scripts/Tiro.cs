@@ -13,7 +13,6 @@ public class Tiro : MonoBehaviour
     public GameObject bolaBlanca;
     public Vector3 prevPos;
     public Vector3 currVel;
-    public float friccion;
     AudioManager audioManager;
     private void Awake()
     {
@@ -22,13 +21,12 @@ public class Tiro : MonoBehaviour
     void Start()
     {
         gameManager.tiros = 10;
-        friccion = 1;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (gameManager.fuerza < 3) 
+            if (gameManager.fuerza < 3)
             {
                 gameManager.fuerza = gameManager.fuerza + 0.5f;
                 Debug.Log("Fuerza: " + gameManager.fuerza);
@@ -52,23 +50,14 @@ public class Tiro : MonoBehaviour
                     gameManager.tiros--;
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
                     gravedad.bolaQuieta = false;
-                    if (hoyo.bolasMetidasPorTiroAnterior == 0)
+                    if (gameManager.puntuacion == gameManager.puntuacionAnterior)
                     {
-                        hoyo.bolasMetidasPorTiro = 0;
+                        gameManager.multiplicador = 1;
                     }
-                    hoyo.bolasMetidasPorTiroAnterior = 0;
+                    hoyo.bolasMetidasPorTiro = 0;
+                    gameManager.puntuacionAnterior = gameManager.puntuacion;
                 }
-
             }
-        }
-        //Debug.Log(bolaBlancaRb.linearVelocity);
-        if (gravedad.bolaQuieta == false)
-        {/*
-            bolaBlancaRb.velocity = bolaBlancaRb.velocity * (1f - friccion * Time.fixedDeltaTime);
-            if (bolaBlancaRb.velocity.magnitude < 0.1)
-            {
-                bolaBlancaRb.velocity = Vector3.zero;
-            }*/
         }
     }
 }

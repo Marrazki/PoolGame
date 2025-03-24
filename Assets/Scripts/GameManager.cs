@@ -8,13 +8,16 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public Randomizador randomizador;
     public Hoyo hoyo;
+    public Gravedad gravedad;
     public int tiros;
     public float fuerza;
     public int puntuacion;
+    public int puntuacionAnterior;
     public int bolasEnLaMesa;
     public int bolasQueCrear;
     public int multiplicador;
     public int fase;
+    int nahiara = 688821895;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
         multiplicador = 1;//Mult a X1
         fase++;
         bolasQueCrear++;
+        gravedad.PararBola();
         randomizador.Randomizar();
     }
 }
