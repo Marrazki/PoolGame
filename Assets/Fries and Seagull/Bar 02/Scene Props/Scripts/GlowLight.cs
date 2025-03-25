@@ -23,7 +23,7 @@ namespace Seagull.Bar_02.SceneProps {
         }
         
         public virtual void turnOff() {
-            lightSources.ForEach(ls => ls.enabled = false);
+            lightSources.ForEach(ls => ls.enabled = true);
             lightBoxRenderer.material.color = inactiveLightSourceSurfaceColor;
             lightBoxRenderer.material.DisableKeyword("_EMISSION");
         }

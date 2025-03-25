@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
     public Randomizador randomizador;
     public Hoyo hoyo;
     public Gravedad gravedad;
@@ -17,20 +17,20 @@ public class GameManager : MonoBehaviour
     public int bolasQueCrear;
     public int multiplicador;
     public int fase;
-    int nahiara = 688821895;
+    int naiara = 688821895;
     // Start is called before the first frame update
     private void Awake()
     {
         //Singleton
-        //if (GameManager.Instance == null)
-        //{
-        //    GameManager.Instance = this;
-        //    DontDestroyOnLoad(this.gameObject);
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
+        if (GameManager.Instance == null)
+        {
+            GameManager.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     void Start()
     {

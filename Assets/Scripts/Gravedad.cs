@@ -23,10 +23,6 @@ public class Gravedad : MonoBehaviour
 
         if (bolaQuieta == false)
         {
-            Debug.Log("velocidad: " + rb.linearVelocity.magnitude);
-            Debug.Log("angular: " + rb.angularVelocity.magnitude);
-            //rb.linearVelocity = rb.linearVelocity * 0.999f * Time.deltaTime;
-            rb.angularVelocity = rb.angularVelocity * 0.999f;
             if (rb.linearVelocity.magnitude <= 1)
             {
                 PararBola();

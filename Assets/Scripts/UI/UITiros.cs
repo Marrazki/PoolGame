@@ -14,6 +14,6 @@ public class UITiros : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textoTiros.text = "Tiros: " + gameManager.tiros.ToString();
+        textoTiros.text = "X " + gameManager.tiros.ToString();
     }
 }

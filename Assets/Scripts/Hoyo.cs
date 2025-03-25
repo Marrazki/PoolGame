@@ -26,6 +26,7 @@ public class Hoyo : MonoBehaviour
     void Update()
     {
         Debug.Log("Bolas metidas: " + bolasMetidasPorTiro);
+        Debug.Log("Puntuación anterior: " + gameManager.puntuacionAnterior);
     }
     public void MeterBola(Bolas bola)
     {
