@@ -24,8 +24,7 @@ public class Hoyo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Bolas metidas: " + bolasMetidasPorTiro);
-        Debug.Log("Puntuación anterior: " + gameManager.puntuacionAnterior);
+
     }
     public void MeterBola(Bolas bola)
     {

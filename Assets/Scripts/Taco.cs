@@ -21,12 +21,10 @@ public class Taco : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Debug.Log("SHIFT");
             velocidadActual = velocidadShift;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            Debug.Log("SHIFT no pulsado");
             velocidadActual = velocidad;
         }
         x = bolaBlanca.transform.position.x;

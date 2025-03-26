@@ -27,6 +27,5 @@ public class Gravedad : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         bolaQuieta = true;
-
     }
 }
