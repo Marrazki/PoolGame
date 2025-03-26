@@ -20,14 +20,6 @@ public class Gravedad : MonoBehaviour
         {
             PararBola();
         }
-
-        if (bolaQuieta == false)
-        {
-            if (rb.linearVelocity.magnitude <= 1)
-            {
-                PararBola();
-            }
-        }
     }
     //rb.AddForce (new Vector3(0, 100 * gravedad * Time.deltaTime, 0));
     public void PararBola()

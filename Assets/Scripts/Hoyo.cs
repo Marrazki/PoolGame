@@ -6,7 +6,6 @@ public class Hoyo : MonoBehaviour
 {
     public Gravedad gravedad;
     public GameManager gameManager;
-    public Bolas bolas;
     public GameObject bolaBlanca;
     public int bolasMetidasPorTiro;
     AudioManager audioManager;
@@ -31,8 +30,8 @@ public class Hoyo : MonoBehaviour
     public void MeterBola(Bolas bola)
     {
         audioManager.PlaySFX(audioManager.hoyo);
-        gameManager.multiplicador = gameManager.multiplicador + bolasMetidasPorTiro;
         gameManager.puntuacion += gameManager.multiplicador * bola.numero;
+        gameManager.multiplicador = gameManager.multiplicador * 2;
         if (bola.numero == 0)//Si es la blanca
         {
             if (gameManager.bolasEnLaMesa > 0)

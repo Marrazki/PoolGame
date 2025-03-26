@@ -48,7 +48,7 @@ public class Tiro : MonoBehaviour
                 {
                     audioManager.PlaySFX(audioManager.tiro);
                     gameManager.tiros--;
-                    bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 500);
+                    bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 400);
                     gravedad.bolaQuieta = false;
                     if (gameManager.puntuacion == gameManager.puntuacionAnterior)
                     {
