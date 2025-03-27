@@ -9,6 +9,6 @@ public class UIFuerza : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textoFuerza.text = "Fuerza: " + gameManager.fuerza.ToString();
+        textoFuerza.text = gameManager.fuerza.ToString();
     }
 }
