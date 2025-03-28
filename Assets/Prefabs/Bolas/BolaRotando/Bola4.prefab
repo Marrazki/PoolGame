@@ -164,4 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d210ed23bb6e5144b9a276c14acaa455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bola: {fileID: 0}
+  bola: {fileID: 6696016815503619502, guid: ded7e8c7f7a1bad43a7f64ef4469ff8e, type: 3}
