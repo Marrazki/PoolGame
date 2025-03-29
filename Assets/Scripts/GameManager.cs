@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     public void Perder()
     {
         Debug.Log("Has perdido");
-        SceneManager.LoadSceneAsync("YOULOSE");
+        SceneManager.LoadSceneAsync("GAMEOVER");
         bolasQueCrear = 1;
         tiros++;
     }

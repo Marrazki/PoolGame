@@ -15,7 +15,6 @@ public class Menu : MonoBehaviour
     {
         audioManager.PlaySFX(audioManager.Click);
         SceneManager.LoadSceneAsync("PLAY");
-        gameManager.SiguienteFase();
     }
     public void QuitGame()
     {

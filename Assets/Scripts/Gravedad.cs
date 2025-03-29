@@ -21,7 +21,6 @@ public class Gravedad : MonoBehaviour
             {
                 if (bolaQuieta == false)
                 {
-                    bolaQuieta = true;
                     PararBola();
                 }
             }
@@ -30,6 +29,7 @@ public class Gravedad : MonoBehaviour
     public void PararBola()
     {
         Debug.Log("PEIO PARAR BOLA");
+        bolaQuieta = true;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }

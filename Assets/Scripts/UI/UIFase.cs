@@ -20,6 +20,6 @@ public class UIFase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textoFase.text = "FASE " + gameManager.fase.ToString();
+        textoFase.text = gameManager.fase.ToString();
     }
 }

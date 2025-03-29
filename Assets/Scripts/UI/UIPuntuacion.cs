@@ -20,6 +20,6 @@ public class UIPuntuacion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textoPuntuacion.text = "Puntuacion: " + gameManager.puntuacion.ToString();
+        textoPuntuacion.text = gameManager.puntuacion.ToString();
     }
 }
