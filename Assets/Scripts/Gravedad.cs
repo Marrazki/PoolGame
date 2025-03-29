@@ -15,18 +15,21 @@ public class Gravedad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.linearVelocity.magnitude == 0)
+        if (rb.linearVelocity.magnitude > 0)
         {
-            if (bolaQuieta == false)
+            if (rb.linearVelocity.magnitude < 0.5)
             {
-                PararBola();
+                if (bolaQuieta == false)
+                {
+                    bolaQuieta = true;
+                    PararBola();
+                }
             }
         }
     }
     public void PararBola()
     {
         Debug.Log("PEIO PARAR BOLA");
-        bolaQuieta = true;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }
