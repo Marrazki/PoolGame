@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 5360296014939644261}
   - component: {fileID: 3553889541407466623}
   - component: {fileID: 6567491167908058002}
-  - component: {fileID: 367317684588731533}
-  - component: {fileID: 8145874336811220129}
+  - component: {fileID: -6276679750375859195}
   m_Layer: 0
-  m_Name: Bola6
+  m_Name: Bola6Rotando
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &367317684588731533
+--- !u!114 &-6276679750375859195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,21 +146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7744769825262784680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8dfb3666b5523d46a8ad5483daef955, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e485d585b2beb6439876c15784b5c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numero: 6
-  tipo: 0
---- !u!114 &8145874336811220129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7744769825262784680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d210ed23bb6e5144b9a276c14acaa455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bola: {fileID: 6452668728525514982, guid: 43df54ee285b7be4ab13de58a6bb21ea, type: 3}
+  bola: {fileID: 0}

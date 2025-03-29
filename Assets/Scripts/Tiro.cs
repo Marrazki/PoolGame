@@ -29,7 +29,6 @@ public class Tiro : MonoBehaviour
             if (gameManager.fuerza < 3)
             {
                 gameManager.fuerza = gameManager.fuerza + 0.5f;
-                Debug.Log("Fuerza: " + gameManager.fuerza);
             }
         }
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -37,7 +36,6 @@ public class Tiro : MonoBehaviour
             if (gameManager.fuerza > 0.5)
             {
                 gameManager.fuerza = gameManager.fuerza - 0.5f;
-                Debug.Log("Fuerza: " + gameManager.fuerza);
             }
         }
         if (gravedad.bolaQuieta == true)
@@ -46,16 +44,19 @@ public class Tiro : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    Debug.Log("PEIO TIRAR BOLA 1");
                     audioManager.PlaySFX(audioManager.tiro);
                     gameManager.tiros--;
                     bolaBlancaRb.AddForce((bolaBlanca.transform.position - tiroInicio.transform.position).normalized * gameManager.fuerza * 400);
                     gravedad.bolaQuieta = false;
+                    Debug.Log("PEIO TIRAR BOLA 2");
                     if (gameManager.puntuacion == gameManager.puntuacionAnterior)
                     {
                         gameManager.multiplicador = 1;
                     }
                     gameManager.puntuacionAnterior = gameManager.puntuacion;
                     hoyo.bolasMetidasPorTiro = 0;
+                    Debug.Log("PEIO TIRAR BOLA 3");
                 }
             }
         }

@@ -44,6 +44,10 @@ public class Randomizador : MonoBehaviour
             GameObject tiroTemporal = Instantiate(bolasManager.bolas[randomBola].gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
             Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
             audioManager.PlaySFX(audioManager.CrearBola);
+
+            //Bola Rotatoria
+            //GameObject tiroTemporal2 = Instantiate(bolasManager.bolas[randomBola].bolaRotadora.gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
+            //Rigidbody rb2 = tiroTemporal2.GetComponent<Rigidbody>();
         }
         //Bola negra
         {
@@ -51,6 +55,10 @@ public class Randomizador : MonoBehaviour
             randomz = Random.Range(-3, 4);
             GameObject tiroTemporal = Instantiate(bolasManager.bolas[8].gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
             Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+
+            //Bola Rotatoria
+            //GameObject tiroTemporal2 = Instantiate(bolasManager.bolas[randomBola].bolaRotadora.gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
+            //Rigidbody rb2 = tiroTemporal2.GetComponent<Rigidbody>();
         }
     }
 }

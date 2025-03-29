@@ -5,8 +5,7 @@ using UnityEngine;
 public class Gravedad : MonoBehaviour
 {
     public Rigidbody rb;
-    public float gravedad = -9.8f;
-    public bool bolaQuieta = true;
+    public bool bolaQuieta = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +15,19 @@ public class Gravedad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (rb.linearVelocity.magnitude == 0)
         {
-            PararBola();
+            if (bolaQuieta == false)
+            {
+                PararBola();
+            }
         }
     }
-    //rb.AddForce (new Vector3(0, 100 * gravedad * Time.deltaTime, 0));
     public void PararBola()
     {
+        Debug.Log("PEIO PARAR BOLA");
+        bolaQuieta = true;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        bolaQuieta = true;
     }
 }

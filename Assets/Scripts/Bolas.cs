@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class Bolas : MonoBehaviour
 {
+    AudioManager audioManager;
     public int numero;
     public bool tipo;
-    AudioManager audioManager;
+    //public GameObject bolaRotadora;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
