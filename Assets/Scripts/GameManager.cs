@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public int multiplicador;
     public int fase;
     int naiara = 688821895;
-    // Start is called before the first frame update
     private void Awake()
     {
         //Singleton
@@ -32,6 +31,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // Start is called before the first frame update
     void Start()
     {
         tiros = 10;
@@ -44,10 +44,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tiros < 0)
-        {
-            Perder();
-        }
+
     }
     public void Perder()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance { get; private set; }
     [Header("---------- Audio Source ----------")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
@@ -16,6 +17,19 @@ public class AudioManager : MonoBehaviour
     //Menú
     public AudioClip Click;
 
+    private void Awake()
+    {
+        //Singleton
+        if (AudioManager.Instance == null)
+        {
+            AudioManager.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         musicSource.clip = background;

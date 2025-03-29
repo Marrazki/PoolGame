@@ -31,7 +31,6 @@ public class Taco : MonoBehaviour
         z = bolaBlanca.transform.position.z;
         transform.position = new Vector3(x, 4.62f, z);
 
-        //this.gameObject.transform.position(new Vector3(bolaBlanca));
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             this.gameObject.transform.Rotate(new Vector3(0, -1, 0) * velocidadActual); //Mover hacia la derecha

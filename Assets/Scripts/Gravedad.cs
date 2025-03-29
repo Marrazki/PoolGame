@@ -6,6 +6,7 @@ public class Gravedad : MonoBehaviour
 {
     public Rigidbody rb;
     public bool bolaQuieta = false;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,10 @@ public class Gravedad : MonoBehaviour
                 if (bolaQuieta == false)
                 {
                     PararBola();
+                    if (gameManager.tiros == 0)
+                    {
+                        gameManager.Perder();
+                    }
                 }
             }
         }
