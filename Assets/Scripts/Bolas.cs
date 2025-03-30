@@ -6,7 +6,6 @@ public class Bolas : MonoBehaviour
     AudioManager audioManager;
     public int numero;
     public bool tipo;
-    //public GameObject bolaRotadora;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
@@ -21,7 +20,6 @@ public class Bolas : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //if collision TAG BOLA
         {
             audioManager.PlaySFX(audioManager.choque);
         }

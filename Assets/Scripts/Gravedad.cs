@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Gravedad : MonoBehaviour
 {
+    public static Gravedad Instance { get; private set; }
     public Rigidbody rb;
     public bool bolaQuieta = false;
     public GameManager gameManager;
+    private void Awake()
+    {
+        //Singleton
+        if (Gravedad.Instance == null)
+        {
+            Gravedad.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {

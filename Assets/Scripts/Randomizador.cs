@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Randomizador : MonoBehaviour
 {
+    public static Randomizador Instance { get; private set; }
     public BolasManager bolasManager;
     public GameManager gameManager;
     public Hoyo hoyo;
@@ -14,6 +15,16 @@ public class Randomizador : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+        //Singleton
+        if (Randomizador.Instance == null)
+        {
+            Randomizador.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()

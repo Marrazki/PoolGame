@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
     public int bolasQueCrear;
     public int multiplicador;
     public int fase;
+    public int bolasMetidasPorTiro;
     int naiara = 688821895;
+    public int dinero = 0;
     private void Awake()
     {
         //Singleton
@@ -39,6 +41,9 @@ public class GameManager : MonoBehaviour
         puntuacion = 0;
         bolasEnLaMesa = 0;
         bolasQueCrear = 1;
+        fase = 1;
+        multiplicador = 1;
+        bolasMetidasPorTiro = 0;
     }
 
     // Update is called once per frame
@@ -57,11 +62,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Siguiente Fase, fase " + fase);
         tiros = 10;
-        hoyo.bolasMetidasPorTiro = 0;
+        bolasMetidasPorTiro = 0;
         multiplicador = 1;//Mult a X1
         fase++;
         bolasQueCrear++;
-        gravedad.PararBola();
         randomizador.Randomizar();
+    }
+    public void Shop()
+    {
+        SceneManager.LoadSceneAsync("SHOP");
+        dinero += tiros;
     }
 }

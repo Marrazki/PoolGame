@@ -7,7 +7,6 @@ public class Hoyo : MonoBehaviour
     public Gravedad gravedad;
     public GameManager gameManager;
     public GameObject bolaBlanca;
-    public int bolasMetidasPorTiro;
     AudioManager audioManager;
     private void Awake()
     {
@@ -16,9 +15,7 @@ public class Hoyo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.fase = 1;
-        gameManager.multiplicador = 1;
-        bolasMetidasPorTiro = 0;
+
     }
 
     // Update is called once per frame
@@ -38,12 +35,13 @@ public class Hoyo : MonoBehaviour
                 gravedad.bolaQuieta = true;
                 bolaBlanca.transform.position = new Vector3(8, 4.5f, 0);//Mover bolaBlanca a (8,4.5,0);
                 gravedad.PararBola();
-                bolasMetidasPorTiro = 0;
+                gameManager.bolasMetidasPorTiro = 0;
                 gameManager.multiplicador = 1;//Mult a X1
             }
             else if (gameManager.bolasEnLaMesa == 0)
             {
-                gameManager.SiguienteFase();
+                gravedad.PararBola();
+                gameManager.Shop();
             }
         }
         else if (bola.numero == 8)//Si es negra
@@ -55,14 +53,15 @@ public class Hoyo : MonoBehaviour
             }
             else if (gameManager.bolasEnLaMesa == 1)
             {
-                bolasMetidasPorTiro++;
-                gameManager.SiguienteFase();
+                gravedad.PararBola();
+                gameManager.bolasMetidasPorTiro++;
+                gameManager.Shop();
             }
         }
         else//Si no es ni negra ni blanca
         {
             gameManager.bolasEnLaMesa--;
-            bolasMetidasPorTiro++;
+            gameManager.bolasMetidasPorTiro++;
         }
     }
 

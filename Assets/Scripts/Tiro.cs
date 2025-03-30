@@ -55,7 +55,7 @@ public class Tiro : MonoBehaviour
                         gameManager.multiplicador = 1;
                     }
                     gameManager.puntuacionAnterior = gameManager.puntuacion;
-                    hoyo.bolasMetidasPorTiro = 0;
+                    gameManager.bolasMetidasPorTiro = 0;
                     Debug.Log("PEIO TIRAR BOLA 3");
                 }
             }
