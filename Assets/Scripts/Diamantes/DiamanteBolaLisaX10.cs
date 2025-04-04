@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DiamanteMULTX3 : MonoBehaviour
+public class DiamanteBolaLisaX10 : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
