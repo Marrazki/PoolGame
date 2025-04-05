@@ -6,6 +6,9 @@ TagManager:
   tags:
   - GAMEMANAGER
   - AUDIO
+  - Slot
+  - SlotDiamante
+  - SlotTizas
   layers:
   - Default
   - TransparentFX
