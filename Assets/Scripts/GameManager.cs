@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     public Randomizador randomizador;
     public Hoyo hoyo;
     public Gravedad gravedad;
+    public GameObject canvasUI;
+    public GameObject canvasSHOP;
     public int tiros;
+    public int tirosMax;
     public float fuerza;
     public int puntuacion;
     public int puntuacionAnterior;
@@ -37,6 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         tiros = 10;
+        tirosMax = 10;
         fuerza = 2;
         puntuacion = 0;
         bolasEnLaMesa = 0;
@@ -44,6 +48,8 @@ public class GameManager : MonoBehaviour
         fase = 1;
         multiplicador = 1;
         bolasMetidasPorTiro = 0;
+        canvasUI.SetActive(true);
+        canvasSHOP.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,12 +62,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("Has perdido");
         SceneManager.LoadSceneAsync("GAMEOVER");
         bolasQueCrear = 1;
-        tiros++;
     }
     public void SiguienteFase()
     {
+        canvasUI.SetActive(true);
+        canvasSHOP.SetActive(false);
         Debug.Log("Siguiente Fase, fase " + fase);
-        tiros = 10;
+        tiros = tirosMax;
         bolasMetidasPorTiro = 0;
         multiplicador = 1;//Mult a X1
         fase++;
@@ -70,7 +77,8 @@ public class GameManager : MonoBehaviour
     }
     public void Shop()
     {
-        SceneManager.LoadSceneAsync("SHOP");
+        canvasUI.SetActive(false);
+        canvasSHOP.SetActive(true);
         dinero += tiros;
     }
 }

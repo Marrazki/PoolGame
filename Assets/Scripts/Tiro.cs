@@ -20,7 +20,7 @@ public class Tiro : MonoBehaviour
     }
     void Start()
     {
-        gameManager.tiros = 10;
+        gameManager.tiros = gameManager.tirosMax;
     }
     void Update()
     {

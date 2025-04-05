@@ -3,5 +3,5 @@ using UnityEngine;
 
 public class DiamantesManager : MonoBehaviour
 {
-    public List<Diamantes> bolas;
+    public List<Diamantes> diamantes;
 }

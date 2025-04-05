@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Diamantes : MonoBehaviour
+public class Mejoras : MonoBehaviour
 {
     AudioManager audioManager;
     public int precio;

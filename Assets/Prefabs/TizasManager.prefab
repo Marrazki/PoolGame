@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291873339670556016}
-  - component: {fileID: 880142994230517400}
+  - component: {fileID: 7196799373105474091}
   m_Layer: 0
-  m_Name: DiamantesManager
+  m_Name: TizasManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &880142994230517400
+--- !u!114 &7196799373105474091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5429863732295012916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70959a008345cb7419d1c8c5befac543, type: 3}
+  m_Script: {fileID: 11500000, guid: ad7ca1c1a1e2f4a4eb23ccdc836ba615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bolas: []
+  tizas:
+  - {fileID: 7673186147296642826, guid: 5cd320dadfa151d4091bb6f2e5e78a61, type: 3}
+  - {fileID: 7673186147296642826, guid: b6de2fcd27a4a9a4587183ef82956ca5, type: 3}
+  - {fileID: 7673186147296642826, guid: 0d4b3529c9f59fa419f5b673c0a05ba7, type: 3}
