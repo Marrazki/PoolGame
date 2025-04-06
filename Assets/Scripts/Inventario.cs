@@ -29,13 +29,13 @@ public class Inventario : MonoBehaviour
     void Arrastrar()
     {
         if (Input.GetMouseButtonDown(0))
-        { 
+        {
             pointerData.position = Input.mousePosition;
             graphRay.Raycast(pointerData, raycastResults);
             if (raycastResults.Count > 0)
             {
                 if (raycastResults[0].gameObject.GetComponent<Item>())
-                { 
+                {
                     objetoSeleccionado = raycastResults[0].gameObject;
                     exParent = objetoSeleccionado.transform.parent.transform;
                     objetoSeleccionado.transform.SetParent(canvas);
@@ -46,47 +46,59 @@ public class Inventario : MonoBehaviour
         {
             objetoSeleccionado.GetComponent<RectTransform>().localPosition = CanvasScreen(Input.mousePosition);
         }
-        if (Input.GetMouseButtonUp(0))
+        if (objetoSeleccionado != null)
         {
-            pointerData.position = Input.mousePosition;
-            raycastResults.Clear();
-            graphRay.Raycast(pointerData, raycastResults);
-            if (raycastResults.Count > 0)
+            if (Input.GetMouseButtonUp(0))
             {
-                foreach (var resultado in raycastResults)
+                pointerData.position = Input.mousePosition;
+                raycastResults.Clear();
+                graphRay.Raycast(pointerData, raycastResults);
+                if (raycastResults.Count > 0)
                 {
-                    if (resultado.gameObject.CompareTag("SlotDiamante"))
+                    foreach (var resultado in raycastResults)
                     {
-                        if (resultado.gameObject.GetComponentInChildren<Item>() == null)
+                        if (resultado.gameObject.CompareTag("SlotDiamante"))
                         {
-                            objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
-                            objetoSeleccionado.transform.localPosition = Vector2.zero;
-                            exParent = objetoSeleccionado.transform.parent.transform;
-                            Debug.Log("Slot Libre");
+                            if (resultado.gameObject.GetComponentInChildren<Item>() == null)
+                            {
+                                objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
+                                objetoSeleccionado.transform.localPosition = Vector2.zero;
+                                exParent = objetoSeleccionado.transform.parent.transform;
+                                Debug.Log("Slot Libre");
+                            }
+                            else
+                            {
+                                Debug.Log("Tienen distinto ID");
+
+                                //  CAMBIAR DE SLOT ENTRE ELLOS
+
+                                //objetoSeleccionado.transform.SetParent(resultado.gameObject.transform.parent);
+                                //resultado.gameObject.transform.SetParent(exParent);
+                                //resultado.gameObject.transform.localPosition = Vector2.zero;
+
+                                //  VOLVER AL SLOT DE ANTES
+
+                                objetoSeleccionado.transform.SetParent(exParent.transform);
+                                objetoSeleccionado.transform.localPosition = Vector2.zero;
+                            }
                         }
                         else
                         {
-                            Debug.Log("Tienen distinto ID");
                             objetoSeleccionado.transform.SetParent(exParent.transform);
                             objetoSeleccionado.transform.localPosition = Vector2.zero;
                         }
                     }
-                    else
-                    {
-                        objetoSeleccionado.transform.SetParent(exParent.transform);
-                        objetoSeleccionado.transform.localPosition = Vector2.zero;
-                    }
                 }
+                objetoSeleccionado = null;
             }
-            objetoSeleccionado = null;
         }
         raycastResults.Clear();
     }
-    public Vector2 CanvasScreen (Vector2 screenPos)
+    public Vector2 CanvasScreen(Vector2 screenPos)
     {
         Vector2 viewportPoint = Camera.main.ScreenToViewportPoint(screenPos);
         Vector2 canvasSize = canvas.GetComponent<RectTransform>().sizeDelta;
 
-        return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize/2));
+        return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize / 2));
     }
 }
