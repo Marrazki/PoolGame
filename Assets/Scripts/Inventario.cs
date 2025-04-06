@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System;
+using Unity.VisualScripting;
 
 public class Inventario : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Inventario : MonoBehaviour
     private List<RaycastResult> raycastResults;
     public Transform canvas;
     public GameObject objetoSeleccionado;
+    public Transform exParent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,9 +37,14 @@ public class Inventario : MonoBehaviour
                 if (raycastResults[0].gameObject.GetComponent<Item>())
                 { 
                     objetoSeleccionado = raycastResults[0].gameObject;
+                    exParent = objetoSeleccionado.transform.parent.transform;
                     objetoSeleccionado.transform.SetParent(canvas);
                 }
             }
+        }
+        if (objetoSeleccionado != null)
+        {
+            objetoSeleccionado.GetComponent<RectTransform>().localPosition = CanvasScreen(Input.mousePosition);
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -47,9 +55,25 @@ public class Inventario : MonoBehaviour
             {
                 foreach (var resultado in raycastResults)
                 {
-                    if (resultado.gameObject.tag == "SlotDiamante")
+                    if (resultado.gameObject.CompareTag("SlotDiamante"))
                     {
-                        objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
+                        if (resultado.gameObject.GetComponentInChildren<Item>() == null)
+                        {
+                            objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
+                            objetoSeleccionado.transform.localPosition = Vector2.zero;
+                            exParent = objetoSeleccionado.transform.parent.transform;
+                            Debug.Log("Slot Libre");
+                        }
+                        else
+                        {
+                            Debug.Log("Tienen distinto ID");
+                            objetoSeleccionado.transform.SetParent(exParent.transform);
+                            objetoSeleccionado.transform.localPosition = Vector2.zero;
+                        }
+                    }
+                    else
+                    {
+                        objetoSeleccionado.transform.SetParent(exParent.transform);
                         objetoSeleccionado.transform.localPosition = Vector2.zero;
                     }
                 }
@@ -57,5 +81,12 @@ public class Inventario : MonoBehaviour
             objetoSeleccionado = null;
         }
         raycastResults.Clear();
+    }
+    public Vector2 CanvasScreen (Vector2 screenPos)
+    {
+        Vector2 viewportPoint = Camera.main.ScreenToViewportPoint(screenPos);
+        Vector2 canvasSize = canvas.GetComponent<RectTransform>().sizeDelta;
+
+        return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize/2));
     }
 }

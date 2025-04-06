@@ -9,6 +9,8 @@ TagManager:
   - Slot
   - SlotDiamante
   - SlotTizas
+  - CameraCenital
+  - Item
   layers:
   - Default
   - TransparentFX
