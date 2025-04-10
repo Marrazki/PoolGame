@@ -55,10 +55,12 @@ public class Inventario : MonoBehaviour
                 graphRay.Raycast(pointerData, raycastResults);
                 if (raycastResults.Count > 0)
                 {
+                    bool nothingSelected = true;
                     foreach (var resultado in raycastResults)
                     {
                         if (resultado.gameObject.CompareTag("SlotDiamante"))
                         {
+                            nothingSelected = false;
                             if (resultado.gameObject.GetComponentInChildren<Item>() == null)
                             {
                                 objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
@@ -72,27 +74,31 @@ public class Inventario : MonoBehaviour
 
                                 //  CAMBIAR DE SLOT ENTRE ELLOS
 
-                                //objetoSeleccionado.transform.SetParent(resultado.gameObject.transform.parent);
-                                //resultado.gameObject.transform.SetParent(exParent);
-                                //resultado.gameObject.transform.localPosition = Vector2.zero;
+                                resultado.gameObject.transform.GetChild(0).SetParent(exParent);
+                                objetoSeleccionado.transform.SetParent(resultado.gameObject.transform);
+                                resultado.gameObject.transform.GetChild(0).localPosition = Vector2.zero;
+                                exParent.gameObject.transform.GetChild(0).localPosition = Vector2.zero;
 
                                 //  VOLVER AL SLOT DE ANTES
 
-                                objetoSeleccionado.transform.SetParent(exParent.transform);
-                                objetoSeleccionado.transform.localPosition = Vector2.zero;
+                                //objetoSeleccionado.transform.SetParent(exParent.transform);
+                                //objetoSeleccionado.transform.localPosition = Vector2.zero;
                             }
                         }
-                        else
-                        {
-                            objetoSeleccionado.transform.SetParent(exParent.transform);
-                            objetoSeleccionado.transform.localPosition = Vector2.zero;
-                        }
+                    }
+                    if(nothingSelected)
+                    {
+                        objetoSeleccionado.transform.SetParent(exParent.transform);
+                        objetoSeleccionado.transform.localPosition = Vector2.zero;
                     }
                 }
                 objetoSeleccionado = null;
             }
         }
+        if (raycastResults != null)
+        {
         raycastResults.Clear();
+        }
     }
     public Vector2 CanvasScreen(Vector2 screenPos)
     {
