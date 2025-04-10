@@ -10,6 +10,9 @@ public class Camara : MonoBehaviour
     public GameObject bolaBlanca;
     float x;
     float z;
+    public GameObject posBolaCamara;
+    public float posBolaCamaraX;
+    public float posBolaCamaraZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class Camara : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         x = taco.transform.position.x;
         z = taco.transform.position.z;
@@ -29,7 +32,10 @@ public class Camara : MonoBehaviour
         {
             cam1.enabled = !cam1.enabled; //cambia el bool de la camara 1
             cam2.enabled = !cam2.enabled; //cambia el bool de la camara 2
-
         }
+
+        posBolaCamaraX = bolaBlanca.transform.position.x;
+        posBolaCamaraZ = bolaBlanca.transform.position.z;
+        posBolaCamara.transform.position = new Vector3(posBolaCamaraX, 4.5f, posBolaCamaraZ);
     }
 }
