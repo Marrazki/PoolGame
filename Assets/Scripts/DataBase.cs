@@ -11,6 +11,7 @@ public class DataBase : ScriptableObject
         public Sprite icono;
         public Tipo tipo;
         public string descripcion;
+        public string Void;
     }
 
     public enum Tipo

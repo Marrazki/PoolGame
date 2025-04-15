@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c031c7cd989d24782e0aa121ab4c91, type: 3}
   m_Name: BaseDatos
   m_EditorClassIdentifier: 
-  baseDatos: []
+  baseDatos:
+  - nombre: Agujero Negro
+    ID: 0
+    icono: {fileID: 21300000, guid: e656438faf926304495f5a46f5daf864, type: 3}
+    tipo: 0
+    descripcion: Los hoyos atraen a las bolas
+    Void: DiamanteAgujeroNegro
+  - nombre: MULT X3
+    ID: 5
+    icono: {fileID: 21300000, guid: b6b316de7887f464998ad95bdfb6485e, type: 3}
+    tipo: 0
+    descripcion: El multiplicador se triplica
+    Void: DiamanteX3MULT

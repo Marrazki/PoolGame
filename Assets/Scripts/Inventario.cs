@@ -7,28 +7,53 @@ using Unity.VisualScripting;
 
 public class Inventario : MonoBehaviour
 {
+    [System.Serializable]
+    public struct ObjetoInvId
+    {
+        public int id;
+
+        public ObjetoInvId(int id)
+        {
+            this.id = id;
+        }
+    }
+    [SerializeField]
+    DataBase data;
+    [Header("Variables del Drag and Drop")]
     public GraphicRaycaster graphRay;
     private PointerEventData pointerData;
     private List<RaycastResult> raycastResults;
-    public Transform canvas;
+    public static Transform canvas;
     public GameObject objetoSeleccionado;
     public Transform exParent;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Prefs e Items")]
+    ////////
+    public static GameObject Descripcion;
+    //public CartelEliminacion CE;
+    public int OSC;
+    public int OSID;
+    ////////
+    public Transform contenido;
+    public Item item;
+    public List<ObjetoInvId> inventario = new List<ObjetoInvId>();
     void Start()
     {
         pointerData = new PointerEventData(null);
         raycastResults = new List<RaycastResult>();
 
-    }
+        Descripcion = GameObject.Find("Descripcion");
 
-    // Update is called once per frame
+        //CE.gameObject.SetActive(false);
+
+        canvas = transform.parent.transform;
+    }
     void Update()
     {
         Arrastrar();
     }
     void Arrastrar()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             pointerData.position = Input.mousePosition;
             graphRay.Raycast(pointerData, raycastResults);
@@ -37,7 +62,11 @@ public class Inventario : MonoBehaviour
                 if (raycastResults[0].gameObject.GetComponent<Item>())
                 {
                     objetoSeleccionado = raycastResults[0].gameObject;
+                    ///////////
+                    OSID = objetoSeleccionado.GetComponent<Item>().ID;
+                    ///////////
                     exParent = objetoSeleccionado.transform.parent.transform;
+                    exParent.GetComponent<Image>().fillCenter = false;
                     objetoSeleccionado.transform.SetParent(canvas);
                 }
             }
@@ -48,7 +77,7 @@ public class Inventario : MonoBehaviour
         }
         if (objetoSeleccionado != null)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(1))
             {
                 pointerData.position = Input.mousePosition;
                 raycastResults.Clear();
@@ -84,9 +113,14 @@ public class Inventario : MonoBehaviour
                                 //objetoSeleccionado.transform.SetParent(exParent.transform);
                                 //objetoSeleccionado.transform.localPosition = Vector2.zero;
                             }
+                            if (resultado.gameObject.CompareTag("Eliminar"))
+                            {
+                                //CE.gameObject.SetActive(false);
+                                EliminarItem(objetoSeleccionado.gameObject.GetComponent<Item>().ID);
+                            }
                         }
                     }
-                    if(nothingSelected)
+                    if (nothingSelected)
                     {
                         objetoSeleccionado.transform.SetParent(exParent.transform);
                         objetoSeleccionado.transform.localPosition = Vector2.zero;
@@ -97,7 +131,7 @@ public class Inventario : MonoBehaviour
         }
         if (raycastResults != null)
         {
-        raycastResults.Clear();
+            raycastResults.Clear();
         }
     }
     public Vector2 CanvasScreen(Vector2 screenPos)
@@ -106,5 +140,70 @@ public class Inventario : MonoBehaviour
         Vector2 canvasSize = canvas.GetComponent<RectTransform>().sizeDelta;
 
         return (new Vector2(viewportPoint.x * canvasSize.x, viewportPoint.y * canvasSize.y) - (canvasSize / 2));
+    }
+    public void AgregarItem(int id)
+    {
+        inventario.Add(new ObjetoInvId(id));
+        InventoryUpdate();
+    }
+    public void EliminarItem(int id)
+    {
+        for (int i = 0; i < inventario.Count; i++)
+        {
+            inventario.Remove(inventario[i]);
+            InventoryUpdate();
+        }
+    }
+    List<Item> pool = new List<Item>();
+    public void InventoryUpdate()
+    {
+        for (int i = 0; i < pool.Count; i++)
+        {
+            if (i < inventario.Count)
+            {
+                ObjetoInvId o = inventario[i];
+                pool[i].ID = o.id;
+                pool[i].GetComponent<Image>().sprite = data.baseDatos[o.id].icono;
+                pool[i].GetComponent<RectTransform>().localPosition = Vector3.zero;
+                pool[i].Boton.onClick.RemoveAllListeners();
+                pool[i].Boton.onClick.AddListener(() => gameObject.SendMessage(data.baseDatos[o.id].Void, SendMessageOptions.DontRequireReceiver));
+                pool[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                pool[i].gameObject.SetActive(false);
+                pool[i]._descripcion.SetActive(false);
+                pool[i].gameObject.transform.parent.GetComponent<Image>().fillCenter = false;
+            }
+        }
+        if (inventario.Count > pool.Count)
+        {
+            for (int i = pool.Count; i < inventario.Count; i++)
+            {
+                Item it = Instantiate(item, contenido.GetChild(i));
+                pool.Add(it);
+
+                if (contenido.GetChild(0).childCount >= 2)
+                {
+                    for (int s = 0; s < contenido.childCount; s++)
+                    {
+                        if (contenido.GetChild(s).childCount == 0)
+                        {
+                            it.transform.SetParent(contenido.GetChild(s));
+                            break;
+                        }
+                    }
+                }
+                it.transform.position = Vector3.zero;
+                it.transform.localScale = Vector3.one;
+
+                ObjetoInvId o = inventario[i];
+                pool[i].ID = o.id;
+                pool[i].GetComponent<RectTransform>().localPosition = Vector3.zero;
+                pool[i].GetComponent<Image>().sprite = data.baseDatos[o.id].icono;
+                pool[i].Boton.onClick.RemoveAllListeners();
+                pool[i].Boton.onClick.AddListener(() => gameObject.SendMessage(data.baseDatos[o.id].Void, SendMessageOptions.DontRequireReceiver)); pool[i].gameObject.SetActive(true);
+            }
+        }
     }
 }

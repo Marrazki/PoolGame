@@ -11,6 +11,8 @@ TagManager:
   - SlotTizas
   - CameraCenital
   - Item
+  - liminar
+  - Eliminar
   layers:
   - Default
   - TransparentFX
