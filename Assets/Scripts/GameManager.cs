@@ -80,5 +80,6 @@ public class GameManager : MonoBehaviour
         canvasUI.SetActive(false);
         canvasSHOP.SetActive(true);
         dinero += tiros;
+        randomizador.RandomizarSHOP();
     }
 }

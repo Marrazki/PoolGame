@@ -12,6 +12,19 @@ public class Randomizador : MonoBehaviour
     public float randomz;
     public GameObject bolaBlanca;
     AudioManager audioManager;
+    public float randomSHOP;
+    public InventarioBools InventarioBools;
+
+    public GameObject imagenDiamanteAgujeroNegro;
+    public GameObject imagenDiamanteBolaLisaX10;
+    public GameObject imagenDiamanteBolaRayadaX10;
+    public GameObject imagenDiamanteRebote;
+    public GameObject imagenDiamanteTiroRandom;
+    public GameObject imagenDiamanteX3MULT;
+
+    public GameObject item1SHOP;
+    public GameObject item2SHOP;
+    public GameObject item3SHOP;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
@@ -44,7 +57,7 @@ public class Randomizador : MonoBehaviour
     {
         gameManager.bolasEnLaMesa = gameManager.bolasQueCrear;
         for (int i = 0; i < gameManager.bolasEnLaMesa - 1; i++)
-        { 
+        {
             randomx = Random.Range(-8, 9);
             randomz = Random.Range(-3, 4);
             randomBola = Random.Range(1, 15);
@@ -70,6 +83,95 @@ public class Randomizador : MonoBehaviour
             //Bola Rotatoria
             //GameObject tiroTemporal2 = Instantiate(bolasManager.bolas[randomBola].bolaRotadora.gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
             //Rigidbody rb2 = tiroTemporal2.GetComponent<Rigidbody>();
+        }
+    }
+    public void RandomizarSHOP()
+    {
+        for (int i = 1; i < 4; i++)
+        {
+            randomSHOP = Random.Range(0, 6);
+
+            if (i == 1)
+            {
+                if (randomSHOP == 0)
+                {
+                    imagenDiamanteAgujeroNegro.transform.position = item1SHOP.transform.position;
+                }
+                if (randomSHOP == 1)
+                {
+                    imagenDiamanteBolaLisaX10.transform.position = item1SHOP.transform.position;
+                }
+                if (randomSHOP == 2)
+                {
+                    imagenDiamanteBolaRayadaX10.transform.position = item1SHOP.transform.position;
+                }
+                if (randomSHOP == 3)
+                {
+                    imagenDiamanteRebote.transform.position = item1SHOP.transform.position;
+                }
+                if (randomSHOP == 4)
+                {
+                    imagenDiamanteTiroRandom.transform.position = item1SHOP.transform.position;
+                }
+                if (randomSHOP == 5)
+                {
+                    imagenDiamanteX3MULT.transform.position = item1SHOP.transform.position;
+                }
+            }
+            if (i == 2)
+            {
+                if (randomSHOP == 0)
+                {
+                    imagenDiamanteAgujeroNegro.transform.position = item2SHOP.transform.position;
+                }
+                if (randomSHOP == 1)
+                {
+                    imagenDiamanteBolaLisaX10.transform.position = item2SHOP.transform.position;
+                }
+                if (randomSHOP == 2)
+                {
+                    imagenDiamanteBolaRayadaX10.transform.position = item2SHOP.transform.position;
+                }
+                if (randomSHOP == 3)
+                {
+                    imagenDiamanteRebote.transform.position = item2SHOP.transform.position;
+                }
+                if (randomSHOP == 4)
+                {
+                    imagenDiamanteTiroRandom.transform.position = item2SHOP.transform.position;
+                }
+                if (randomSHOP == 5)
+                {
+                    imagenDiamanteX3MULT.transform.position = item2SHOP.transform.position;
+                }
+            }
+            if (i == 3)
+            {
+                if (randomSHOP == 0)
+                {
+                    imagenDiamanteAgujeroNegro.transform.position = item3SHOP.transform.position;
+                }
+                if (randomSHOP == 1)
+                {
+                    imagenDiamanteBolaLisaX10.transform.position = item3SHOP.transform.position;
+                }
+                if (randomSHOP == 2)
+                {
+                    imagenDiamanteBolaRayadaX10.transform.position = item3SHOP.transform.position;
+                }
+                if (randomSHOP == 3)
+                {
+                    imagenDiamanteRebote.transform.position = item3SHOP.transform.position;
+                }
+                if (randomSHOP == 4)
+                {
+                    imagenDiamanteTiroRandom.transform.position = item3SHOP.transform.position;
+                }
+                if (randomSHOP == 5)
+                {
+                    imagenDiamanteX3MULT.transform.position = item3SHOP.transform.position;
+                }
+            }
         }
     }
 }
