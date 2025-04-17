@@ -4256,6 +4256,7 @@ GameObject:
   - component: {fileID: 543447840}
   - component: {fileID: 543447842}
   - component: {fileID: 543447841}
+  - component: {fileID: 543447843}
   m_Layer: 5
   m_Name: Precio
   m_TagString: Untagged
@@ -4381,6 +4382,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543447839}
   m_CullTransparentMesh: 1
+--- !u!114 &543447843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543447839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 543447841}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867091253}
+        m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
+        m_MethodName: ComprarDiamanteRebote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &573080537
 GameObject:
   m_ObjectHideFlags: 0
@@ -4528,6 +4585,7 @@ GameObject:
   - component: {fileID: 582392993}
   - component: {fileID: 582392995}
   - component: {fileID: 582392994}
+  - component: {fileID: 582392996}
   m_Layer: 5
   m_Name: Precio
   m_TagString: Untagged
@@ -4653,6 +4711,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582392992}
   m_CullTransparentMesh: 1
+--- !u!114 &582392996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582392992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 582392994}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867091253}
+        m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
+        m_MethodName: ComprarDiamanteTiroRandom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &601728257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5716,6 +5830,65 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &867091251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867091252}
+  - component: {fileID: 867091253}
+  m_Layer: 0
+  m_Name: SHOPManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867091252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867091251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 837.6411, y: 842.9461, z: -15.212555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867091253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867091251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535c7a72169b6a34d8e5e71149db7c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 888833499}
+  inventarioBools: {fileID: 1238154346}
+  randomizador: {fileID: 1677994332}
+  precioDiamanteAgujeroNegro: 15
+  precioDiamanteBolaLisaX10: 7
+  precioDiamanteBolaRayadaX10: 7
+  precioDiamanteRebote: 10
+  precioDiamanteTiroRandom: 8
+  precioDiamanteX3MULT: 13
+  prefabDiamanteAgujeroNegro: {fileID: 7621807859888487606, guid: 6dab59d69035f09458706ef585738f20, type: 3}
+  prefabDiamanteBolaLisaX10: {fileID: 8402554494968246975, guid: 874b37f71454f5644983d0b54dd23a85, type: 3}
+  prefabDiamanteBolaRayadaX10: {fileID: 6231078716423040945, guid: ce2628634e910b340b2eef8dc68d0a8c, type: 3}
+  prefabDiamanteRebote: {fileID: 4026664720253504757, guid: 459a6767febb4914c855d014bf08dc78, type: 3}
+  prefabDiamanteTiroRandom: {fileID: 2651859411720530030, guid: 499028bc41e305743a76504ae859d7ba, type: 3}
+  prefabDiamanteX3MULT: {fileID: 8845636276182758003, guid: d7482e54f2a61954b927e53eb28d10ec, type: 3}
 --- !u!1001 &872892756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6833,6 +7006,7 @@ GameObject:
   - component: {fileID: 1131766131}
   - component: {fileID: 1131766133}
   - component: {fileID: 1131766132}
+  - component: {fileID: 1131766134}
   m_Layer: 5
   m_Name: Precio
   m_TagString: Untagged
@@ -6958,6 +7132,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131766130}
   m_CullTransparentMesh: 1
+--- !u!114 &1131766134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131766130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1131766132}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867091253}
+        m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
+        m_MethodName: ComprarDiamanteBolaRayadaX10
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1183989429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,48 +7536,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb3c0810411e344588e438ea0ae91ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: 0
-  slot2: 0
-  slot3: 0
-  slot4: 0
-  slot5: 0
-  slot6: 0
-  diamanteAgujeroNegro_1: 0
-  diamanteAgujeroNegro_2: 0
-  diamanteAgujeroNegro_3: 0
-  diamanteAgujeroNegro_4: 0
-  diamanteAgujeroNegro_5: 0
-  diamanteAgujeroNegro_6: 0
-  diamanteBolaLisaX10_1: 0
-  diamanteBolaLisaX10_2: 0
-  diamanteBolaLisaX10_3: 0
-  diamanteBolaLisaX10_4: 0
-  diamanteBolaLisaX10_5: 0
-  diamanteBolaLisaX10_6: 0
-  diamanteBolaRayadaX10_1: 0
-  diamanteBolaRayadaX10_2: 0
-  diamanteBolaRayadaX10_3: 0
-  diamanteBolaRayadaX10_4: 0
-  diamanteBolaRayadaX10_5: 0
-  diamanteBolaRayadaX10_6: 0
-  diamanteRebote_1: 0
-  diamanteRebote_2: 0
-  diamanteRebote_3: 0
-  diamanteRebote_4: 0
-  diamanteRebote_5: 0
-  diamanteRebote_6: 0
-  diamanteTiroRandom_1: 0
-  diamanteTiroRandom_2: 0
-  diamanteTiroRandom_3: 0
-  diamanteTiroRandom_4: 0
-  diamanteTiroRandom_5: 0
-  diamanteTiroRandom_6: 0
-  diamanteX3MULT_1: 0
-  diamanteX3MULT_2: 0
-  diamanteX3MULT_3: 0
-  diamanteX3MULT_4: 0
-  diamanteX3MULT_5: 0
-  diamanteX3MULT_6: 0
+  slot: 000000000000
+  diamanteAgujeroNegro: 000000000000
+  diamanteBolaLisaX10: 000000000000
+  diamanteBolaRayadaX10: 000000000000
+  diamanteRebote: 000000000000
+  diamanteTiroRandom: 000000000000
+  diamanteX3MULT: 000000000000
 --- !u!4 &1238154347
 Transform:
   m_ObjectHideFlags: 0
@@ -8153,6 +8348,7 @@ GameObject:
   - component: {fileID: 1341600608}
   - component: {fileID: 1341600610}
   - component: {fileID: 1341600609}
+  - component: {fileID: 1341600611}
   m_Layer: 5
   m_Name: Precio
   m_TagString: Untagged
@@ -8278,6 +8474,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341600607}
   m_CullTransparentMesh: 1
+--- !u!114 &1341600611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341600607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1341600609}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867091253}
+        m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
+        m_MethodName: ComprarDiamanteAgujeroNegro
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1369086789 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7237886071122144330, guid: 6dab59d69035f09458706ef585738f20, type: 3}
@@ -11423,6 +11675,7 @@ GameObject:
   - component: {fileID: 1814418739}
   - component: {fileID: 1814418741}
   - component: {fileID: 1814418740}
+  - component: {fileID: 1814418742}
   m_Layer: 5
   m_Name: Precio
   m_TagString: Untagged
@@ -11548,6 +11801,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814418738}
   m_CullTransparentMesh: 1
+--- !u!114 &1814418742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814418738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1814418740}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867091253}
+        m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
+        m_MethodName: ComprarDiamanteX3MULT
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1819254371
 GameObject:
   m_ObjectHideFlags: 0
@@ -11756,7 +12065,7 @@ Transform:
   m_GameObject: {fileID: 1878401905}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100, y: 700, z: 0}
+  m_LocalPosition: {x: 108.8, y: 704.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12740,6 +13049,7 @@ GameObject:
   - component: {fileID: 2007389513}
   - component: {fileID: 2007389515}
   - component: {fileID: 2007389514}
+  - component: {fileID: 2007389516}
   m_Layer: 5
   m_Name: Precio
   m_TagString: Untagged
@@ -12865,6 +13175,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007389512}
   m_CullTransparentMesh: 1
+--- !u!114 &2007389516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007389512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2007389514}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867091253}
+        m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
+        m_MethodName: ComprarDiamanteBolaLisaX10
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2021288986
 GameObject:
   m_ObjectHideFlags: 0
@@ -14074,3 +14440,4 @@ SceneRoots:
   - {fileID: 1311791490}
   - {fileID: 716566930}
   - {fileID: 218073136}
+  - {fileID: 867091252}

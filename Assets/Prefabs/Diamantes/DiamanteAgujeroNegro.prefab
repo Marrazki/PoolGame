@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2925962610157186008}
   - component: {fileID: 9112005282984114006}
   - component: {fileID: 8354323132927377837}
-  - component: {fileID: 7461183389855639165}
+  - component: {fileID: 4905422877407308357}
   m_Layer: 5
   m_Name: DiamanteAgujeroNegro
   m_TagString: Untagged
@@ -104,16 +104,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a310783cfac904fb078093d5823e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7461183389855639165
-MonoBehaviour:
+--- !u!54 &4905422877407308357
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7621807859888487606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e502b6625a10da4db01644ced2731b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
         fase++;
         bolasQueCrear++;
         randomizador.Randomizar();
+        randomizador.OcultarItems();
     }
     public void Shop()
     {

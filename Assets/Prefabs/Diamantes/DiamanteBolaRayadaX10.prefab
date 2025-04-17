@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7050169338049670036}
   - component: {fileID: 1015800398104513534}
   - component: {fileID: 6587123974948928296}
-  - component: {fileID: -2453943066417742010}
   m_Layer: 5
   m_Name: DiamanteBolaRayadaX10
   m_TagString: Untagged
@@ -104,16 +103,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1426218b761bf418e9fbce50d752b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2453943066417742010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6231078716423040945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e502b6625a10da4db01644ced2731b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0

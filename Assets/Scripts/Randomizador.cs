@@ -174,4 +174,13 @@ public class Randomizador : MonoBehaviour
             }
         }
     }
+    public void OcultarItems()
+    {
+        imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteBolaLisaX10.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteBolaRayadaX10.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteRebote.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteTiroRandom.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteX3MULT.transform.localPosition = new Vector3(0, 1000, 0);
+    }
 }
