@@ -8,6 +8,7 @@ public class Gravedad : MonoBehaviour
     public Rigidbody rb;
     public bool bolaQuieta = false;
     public GameManager gameManager;
+    public InventarioBools inventarioBools;
     private void Awake()
     {
         //Singleton
@@ -24,21 +25,24 @@ public class Gravedad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager.playing = true;
     }
     // Update is called once per frame
     void Update()
     {
-        if (rb.linearVelocity.magnitude > 0)
+        if (gameManager.playing)
         {
-            if (rb.linearVelocity.magnitude < 0.5)
+            if (rb.linearVelocity.magnitude > 0)
             {
-                if (bolaQuieta == false)
+                if (rb.linearVelocity.magnitude < 0.5)
                 {
-                    PararBola();
-                    if (gameManager.tiros == 0)
+                    if (bolaQuieta == false)
                     {
-                        gameManager.Perder();
+                        PararBola();
+                        if (gameManager.tiros == 0)
+                        {
+                            gameManager.Perder();
+                        }
                     }
                 }
             }

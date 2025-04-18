@@ -5,20 +5,23 @@ public class SHOPManager : MonoBehaviour
     public GameManager gameManager;
     public InventarioBools inventarioBools;
     public Randomizador randomizador;
-
+    [Header("PRECIOS DIAMANTES")]
     public int precioDiamanteAgujeroNegro = 15;
-    public int precioDiamanteBolaLisaX10 = 7;
-    public int precioDiamanteBolaRayadaX10 = 7;
+    public int preciodiamanteBolaLisaMas10 = 7;
+    public int preciodiamanteBolaRayadaMas10 = 7;
     public int precioDiamanteRebote = 10;
     public int precioDiamanteTiroRandom = 8;
-    public int precioDiamanteX3MULT = 13;
+    public int precioDiamanteX3MULT = 30;
+    [Header("PRECIOS MEJORAS")]
+    public int precioMejoraTiros = 20;
     [Header("PREFABS")]
     public GameObject prefabDiamanteAgujeroNegro;
-    public GameObject prefabDiamanteBolaLisaX10;
-    public GameObject prefabDiamanteBolaRayadaX10;
+    public GameObject prefabDiamanteBolaLisaMas10;
+    public GameObject prefabDiamanteBolaRayadaMas10;
     public GameObject prefabDiamanteRebote;
     public GameObject prefabDiamanteTiroRandom;
     public GameObject prefabDiamanteX3MULT;
+    public GameObject prefabDiamanteVacio;
 
 
     public void ComprarDiamanteAgujeroNegro()
@@ -42,40 +45,40 @@ public class SHOPManager : MonoBehaviour
 
         }
     }
-    public void ComprarDiamanteBolaLisaX10()
+    public void ComprardiamanteBolaLisaMas10()
     {
-        if (gameManager.dinero >= precioDiamanteBolaLisaX10)
+        if (gameManager.dinero >= preciodiamanteBolaLisaMas10)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
-                    gameManager.dinero = gameManager.dinero - precioDiamanteBolaLisaX10;
-                    inventarioBools.diamanteBolaLisaX10[i] = true;
+                    gameManager.dinero = gameManager.dinero - preciodiamanteBolaLisaMas10;
+                    inventarioBools.diamanteBolaLisaMas10[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaLisaX10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaLisaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteBolaLisaX10.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
                 }
             }
         }
     }
-    public void ComprarDiamanteBolaRayadaX10()
+    public void ComprardiamanteBolaRayadaMas10()
     {
-        if (gameManager.dinero >= precioDiamanteBolaRayadaX10)
+        if (gameManager.dinero >= preciodiamanteBolaRayadaMas10)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
-                    gameManager.dinero = gameManager.dinero - precioDiamanteBolaRayadaX10;
-                    inventarioBools.diamanteBolaRayadaX10[i] = true;
+                    gameManager.dinero = gameManager.dinero - preciodiamanteBolaRayadaMas10;
+                    inventarioBools.diamanteBolaRayadaMas10[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaRayadaX10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaRayadaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteBolaRayadaX10.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
                 }
@@ -139,6 +142,32 @@ public class SHOPManager : MonoBehaviour
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
                 }
+            }
+        }
+    }
+    public void ComprarMejoraTiros()
+    {
+        if (gameManager.dinero >= precioMejoraTiros)
+        {
+            {
+                {
+                    gameManager.dinero = gameManager.dinero - precioMejoraTiros;
+                    gameManager.tirosMax++;
+                    randomizador.imagenMejoraTiros.transform.localPosition = new Vector3(0, 1000, 0);
+                }
+            }
+        }
+    }
+    public void EliminarDiamante()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            if (inventarioBools.slot[i] == false)
+            {
+                GameObject diamanteVacioTemp = Instantiate(prefabDiamanteVacio.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                diamanteVacioTemp.transform.parent = inventarioBools.transform;
+                diamanteVacioTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
+                return;
             }
         }
     }

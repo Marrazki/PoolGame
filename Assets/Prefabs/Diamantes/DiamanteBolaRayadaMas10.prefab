@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1015800398104513534}
   - component: {fileID: 6587123974948928296}
   m_Layer: 5
-  m_Name: DiamanteBolaRayadaX10
+  m_Name: DiamanteBolaRayadaMas10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a87d84c063b8cfa4a8de6d88ed2cd84e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cb27213203038b45b839242880a39cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

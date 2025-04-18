@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     public int bolasQueCrear;
     public int multiplicador;
     public int fase;
+    public bool playing;
+    public int bolaLisaNivel;
+    public int bolaRayadaNivel;
     public int bolasMetidasPorTiro;
     int naiara = 688821895;
     public int dinero = 0;
@@ -43,6 +46,8 @@ public class GameManager : MonoBehaviour
         tirosMax = 10;
         fuerza = 2;
         puntuacion = 0;
+        bolaLisaNivel = 0;
+        bolaRayadaNivel = 0;
         bolasEnLaMesa = 0;
         bolasQueCrear = 1;
         fase = 1;
@@ -62,6 +67,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Has perdido");
         SceneManager.LoadSceneAsync("GAMEOVER");
         bolasQueCrear = 1;
+        playing = false;
     }
     public void SiguienteFase()
     {

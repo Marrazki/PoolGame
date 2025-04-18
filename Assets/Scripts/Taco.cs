@@ -7,9 +7,9 @@ public class Taco : MonoBehaviour
     [SerializeField] public GameObject bolaBlanca;
     float x;
     float z;
-    private float velocidad = 0.3f;
-    private float velocidadShift = 0.1f;
-    private float velocidadActual;
+    public float velocidad = 1f;
+    public float velocidadShift = 0.2f;
+    public float velocidadActual;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class Taco : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {

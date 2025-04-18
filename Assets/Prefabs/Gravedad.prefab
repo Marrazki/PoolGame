@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   bolaQuieta: 0
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
+  inventarioBools: {fileID: 0}

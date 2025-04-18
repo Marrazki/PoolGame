@@ -14,14 +14,15 @@ public class Randomizador : MonoBehaviour
     AudioManager audioManager;
     public float randomSHOP;
     public InventarioBools InventarioBools;
-
+    [Header("DIAMANTES")]
     public GameObject imagenDiamanteAgujeroNegro;
-    public GameObject imagenDiamanteBolaLisaX10;
-    public GameObject imagenDiamanteBolaRayadaX10;
+    public GameObject imagenDiamanteBolaLisaMas10;
+    public GameObject imagenDiamanteBolaRayadaMas10;
     public GameObject imagenDiamanteRebote;
     public GameObject imagenDiamanteTiroRandom;
     public GameObject imagenDiamanteX3MULT;
-
+    [Header("MEJORAS")]
+    public GameObject imagenMejoraTiros;
     public GameObject item1SHOP;
     public GameObject item2SHOP;
     public GameObject item3SHOP;
@@ -66,30 +67,23 @@ public class Randomizador : MonoBehaviour
                 randomBola++;
             }
             GameObject tiroTemporal = Instantiate(bolasManager.bolas[randomBola].gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
-            Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+            //Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
             audioManager.PlaySFX(audioManager.CrearBola);
-
-            //Bola Rotatoria
-            //GameObject tiroTemporal2 = Instantiate(bolasManager.bolas[randomBola].bolaRotadora.gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
-            //Rigidbody rb2 = tiroTemporal2.GetComponent<Rigidbody>();
         }
         //Bola negra
         {
             randomx = Random.Range(-8, 9);
             randomz = Random.Range(-3, 4);
             GameObject tiroTemporal = Instantiate(bolasManager.bolas[8].gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
-            Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
-
-            //Bola Rotatoria
-            //GameObject tiroTemporal2 = Instantiate(bolasManager.bolas[randomBola].bolaRotadora.gameObject, new Vector3(randomx, 5, randomz), bolaBlanca.transform.rotation) as GameObject;
-            //Rigidbody rb2 = tiroTemporal2.GetComponent<Rigidbody>();
+            //Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+            audioManager.PlaySFX(audioManager.CrearBola);
         }
     }
     public void RandomizarSHOP()
     {
         for (int i = 1; i < 4; i++)
         {
-            randomSHOP = Random.Range(0, 6);
+            randomSHOP = Random.Range(0, 7);
 
             if (i == 1)
             {
@@ -99,11 +93,11 @@ public class Randomizador : MonoBehaviour
                 }
                 if (randomSHOP == 1)
                 {
-                    imagenDiamanteBolaLisaX10.transform.position = item1SHOP.transform.position;
+                    imagenDiamanteBolaLisaMas10.transform.position = item1SHOP.transform.position;
                 }
                 if (randomSHOP == 2)
                 {
-                    imagenDiamanteBolaRayadaX10.transform.position = item1SHOP.transform.position;
+                    imagenDiamanteBolaLisaMas10.transform.position = item1SHOP.transform.position;
                 }
                 if (randomSHOP == 3)
                 {
@@ -117,6 +111,10 @@ public class Randomizador : MonoBehaviour
                 {
                     imagenDiamanteX3MULT.transform.position = item1SHOP.transform.position;
                 }
+                if (randomSHOP == 6)
+                {
+                    imagenMejoraTiros.transform.position = item1SHOP.transform.position;
+                }
             }
             if (i == 2)
             {
@@ -126,11 +124,11 @@ public class Randomizador : MonoBehaviour
                 }
                 if (randomSHOP == 1)
                 {
-                    imagenDiamanteBolaLisaX10.transform.position = item2SHOP.transform.position;
+                    imagenDiamanteBolaLisaMas10.transform.position = item2SHOP.transform.position;
                 }
                 if (randomSHOP == 2)
                 {
-                    imagenDiamanteBolaRayadaX10.transform.position = item2SHOP.transform.position;
+                    imagenDiamanteBolaRayadaMas10.transform.position = item2SHOP.transform.position;
                 }
                 if (randomSHOP == 3)
                 {
@@ -144,6 +142,10 @@ public class Randomizador : MonoBehaviour
                 {
                     imagenDiamanteX3MULT.transform.position = item2SHOP.transform.position;
                 }
+                if (randomSHOP == 6)
+                {
+                    imagenMejoraTiros.transform.position = item2SHOP.transform.position;
+                }
             }
             if (i == 3)
             {
@@ -153,11 +155,11 @@ public class Randomizador : MonoBehaviour
                 }
                 if (randomSHOP == 1)
                 {
-                    imagenDiamanteBolaLisaX10.transform.position = item3SHOP.transform.position;
+                    imagenDiamanteBolaLisaMas10.transform.position = item3SHOP.transform.position;
                 }
                 if (randomSHOP == 2)
                 {
-                    imagenDiamanteBolaRayadaX10.transform.position = item3SHOP.transform.position;
+                    imagenDiamanteBolaRayadaMas10.transform.position = item3SHOP.transform.position;
                 }
                 if (randomSHOP == 3)
                 {
@@ -171,16 +173,30 @@ public class Randomizador : MonoBehaviour
                 {
                     imagenDiamanteX3MULT.transform.position = item3SHOP.transform.position;
                 }
+                if (randomSHOP == 6)
+                {
+                    imagenMejoraTiros.transform.position = item3SHOP.transform.position;
+                }
             }
         }
     }
     public void OcultarItems()
     {
         imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
-        imagenDiamanteBolaLisaX10.transform.localPosition = new Vector3(0, 1000, 0);
-        imagenDiamanteBolaRayadaX10.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenDiamanteBolaRayadaMas10.transform.localPosition = new Vector3(0, 1000, 0);
         imagenDiamanteRebote.transform.localPosition = new Vector3(0, 1000, 0);
         imagenDiamanteTiroRandom.transform.localPosition = new Vector3(0, 1000, 0);
         imagenDiamanteX3MULT.transform.localPosition = new Vector3(0, 1000, 0);
+        imagenMejoraTiros.transform.localPosition = new Vector3(0, 1000, 0);
+    }
+    public void CrearNegra()
+    {
+        //Bola negra
+        {
+            GameObject tiroTemporal = Instantiate(bolasManager.bolas[8].gameObject, new Vector3(0, 20, 0), bolaBlanca.transform.rotation) as GameObject;
+            //Rigidbody rb = tiroTemporal.GetComponent<Rigidbody>();
+            audioManager.PlaySFX(audioManager.CrearBola);
+        }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4602323310510723243}
   m_Layer: 0
   m_Name: Bola9
-  m_TagString: Untagged
+  m_TagString: BOLA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6362258537203724701}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

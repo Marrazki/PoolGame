@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 606019241070405307}
   - component: {fileID: 6606063017179999486}
   m_Layer: 5
-  m_Name: DiamanteBolaLisaX10
+  m_Name: DiamanteBolaLisaMas10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0d362ff98be36b149aee89d7d793f053, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f084c24b14978c048853c87829c44cef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

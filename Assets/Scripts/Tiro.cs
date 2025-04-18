@@ -14,6 +14,7 @@ public class Tiro : MonoBehaviour
     public Vector3 prevPos;
     public Vector3 currVel;
     AudioManager audioManager;
+    public InventarioBools inventarioBools;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
@@ -57,6 +58,7 @@ public class Tiro : MonoBehaviour
                     gameManager.puntuacionAnterior = gameManager.puntuacion;
                     gameManager.bolasMetidasPorTiro = 0;
                     Debug.Log("PEIO TIRAR BOLA 3");
+                    inventarioBools.UpdateDiamantes();
                 }
             }
         }

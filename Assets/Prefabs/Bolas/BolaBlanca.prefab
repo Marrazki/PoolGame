@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2482572150453692796}
   m_Layer: 0
   m_Name: BolaBlanca
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,8 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6924337908703284819}
-  gravedad: -9.8
   bolaQuieta: 1
+  gameManager: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
+  inventarioBools: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
 --- !u!114 &2482572150453692796
 MonoBehaviour:
   m_ObjectHideFlags: 0
