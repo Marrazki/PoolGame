@@ -32,6 +32,7 @@ public class Hoyo : MonoBehaviour
         if (bola.numero == 8 || bola.numero == 0)
         {
             gameManager.puntuacion += gameManager.multiplicador * bola.numero;
+            gameManager.puntuacionPorHoyo = gameManager.multiplicador * bola.numero;
             gameManager.multiplicador = gameManager.multiplicador * 2;
             if (bola.numero == 0)//Si es la blanca
             {
@@ -77,6 +78,7 @@ public class Hoyo : MonoBehaviour
             if (bola.tipo == false)//LISA
             {
                 gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaLisaNivel);
+                gameManager.puntuacionPorHoyo = (bola.numero + 10 * gameManager.bolaLisaNivel);
                 gameManager.multiplicador = gameManager.multiplicador * 2;
                 inventarioBools.UpdateBolasLisasPuntuacion();
             }

@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip hoyo;
     public AudioClip CrearBola;
     public AudioClip choque;
+    public AudioClip dinero;
     //Menú
     public AudioClip Click;
 

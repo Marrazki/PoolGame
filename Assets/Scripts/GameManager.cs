@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float fuerza;
     public int puntuacion;
     public int puntuacionAnterior;
+    public int puntuacionPorHoyo;
     public int bolasEnLaMesa;
     public int bolasQueCrear;
     public int multiplicador;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         tirosMax = 10;
         fuerza = 2;
         puntuacion = 0;
+        puntuacionPorHoyo = 0;
         bolaLisaNivel = 0;
         bolaRayadaNivel = 0;
         bolasEnLaMesa = 0;

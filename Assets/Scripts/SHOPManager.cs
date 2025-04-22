@@ -5,6 +5,7 @@ public class SHOPManager : MonoBehaviour
     public GameManager gameManager;
     public InventarioBools inventarioBools;
     public Randomizador randomizador;
+    public AudioManager audioManager;
     [Header("PRECIOS DIAMANTES")]
     public int precioDiamanteAgujeroNegro = 15;
     public int preciodiamanteBolaLisaMas10 = 7;
@@ -22,8 +23,10 @@ public class SHOPManager : MonoBehaviour
     public GameObject prefabDiamanteTiroRandom;
     public GameObject prefabDiamanteX3MULT;
     public GameObject prefabDiamanteVacio;
-
-
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+    }
     public void ComprarDiamanteAgujeroNegro()
     {
         if (gameManager.dinero >= precioDiamanteAgujeroNegro)
@@ -32,6 +35,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
                     inventarioBools.diamanteAgujeroNegro[i] = true;
                     inventarioBools.slot[i] = true;
@@ -53,6 +57,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - preciodiamanteBolaLisaMas10;
                     inventarioBools.diamanteBolaLisaMas10[i] = true;
                     inventarioBools.slot[i] = true;
@@ -73,6 +78,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - preciodiamanteBolaRayadaMas10;
                     inventarioBools.diamanteBolaRayadaMas10[i] = true;
                     inventarioBools.slot[i] = true;
@@ -93,6 +99,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - precioDiamanteRebote;
                     inventarioBools.diamanteRebote[i] = true;
                     inventarioBools.slot[i] = true;
@@ -113,6 +120,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - precioDiamanteTiroRandom;
                     inventarioBools.diamanteTiroRandom[i] = true;
                     inventarioBools.slot[i] = true;
@@ -133,6 +141,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - precioDiamanteX3MULT;
                     inventarioBools.diamanteX3MULT[i] = true;
                     inventarioBools.slot[i] = true;
@@ -151,6 +160,7 @@ public class SHOPManager : MonoBehaviour
         {
             {
                 {
+                    audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - precioMejoraTiros;
                     gameManager.tirosMax++;
                     randomizador.imagenMejoraTiros.transform.localPosition = new Vector3(0, 1000, 0);
