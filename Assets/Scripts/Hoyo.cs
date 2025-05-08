@@ -75,19 +75,28 @@ public class Hoyo : MonoBehaviour
         {
             gameManager.bolasEnLaMesa--;
             gameManager.bolasMetidasPorTiro++;
-            if (bola.tipo == false)//LISA
+            if (bola.numero <= 0)
             {
-                gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaLisaNivel);
-                gameManager.puntuacionPorHoyo = (bola.numero + 10 * gameManager.bolaLisaNivel);
-                gameManager.multiplicador = gameManager.multiplicador * 2;
-                inventarioBools.UpdateBolasLisasPuntuacion();
+                if (bola.tipo == false)//LISA
+                {
+                    gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaLisaNivel);
+                    gameManager.puntuacionPorHoyo = (bola.numero + 10 * gameManager.bolaLisaNivel);
+                    gameManager.multiplicador = gameManager.multiplicador * 2;
+                    inventarioBools.UpdateBolasLisasPuntuacion();
+                }
+                if (bola.tipo == true)//RAYADA
+                {
+                    gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaRayadaNivel);
+                    gameManager.multiplicador = gameManager.multiplicador * 2;
+                    inventarioBools.UpdateBolasRayadasPuntuacion();
+                }
             }
-            if (bola.tipo == true)//RAYADA
-            {
-                gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaRayadaNivel);
-                gameManager.multiplicador = gameManager.multiplicador * 2;
-                inventarioBools.UpdateBolasRayadasPuntuacion();
-            }
+                if (bola.numero == -1)//DORADA
+                {
+                    gameManager.multiplicador = gameManager.multiplicador * 2;
+                    gameManager.dineroPlus = true;
+                    inventarioBools.UpdateBolasRayadasPuntuacion();
+                }
         }
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvasSHOP;
     public int tiros;
     public int tirosMax;
+    public int tirosExtra;
     public float fuerza;
     public int puntuacion;
     public int puntuacionAnterior;
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int bolasMetidasPorTiro;
     int naiara = 688821895;
     public int dinero = 0;
+    public bool dineroPlus;
     private void Awake()
     {
         //Singleton
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
         fase = 1;
         multiplicador = 1;
         bolasMetidasPorTiro = 0;
+        dineroPlus = false;
         canvasUI.SetActive(true);
         canvasSHOP.SetActive(false);
     }
@@ -73,10 +77,12 @@ public class GameManager : MonoBehaviour
     }
     public void SiguienteFase()
     {
+        PuntuacionATirosMax();
         canvasUI.SetActive(true);
         canvasSHOP.SetActive(false);
         Debug.Log("Siguiente Fase, fase " + fase);
-        tiros = tirosMax;
+        tiros = tirosMax + tirosExtra;
+        tirosExtra = 0;
         bolasMetidasPorTiro = 0;
         multiplicador = 1;//Mult a X1
         fase++;
@@ -88,7 +94,21 @@ public class GameManager : MonoBehaviour
     {
         canvasUI.SetActive(false);
         canvasSHOP.SetActive(true);
-        dinero += tiros;
+        dinero += tiros + fase;
+        if (dineroPlus)
+        {
+            dinero = +tiros + fase;
+        }
         randomizador.RandomizarSHOP();
+    }
+    public void PuntuacionATirosMax()
+    {
+        for (int i = 1; i <= 16; i++)
+        {
+            if (puntuacion >= Math.Pow(10, i))
+            {
+                tirosExtra++;
+            }
+        }
     }
 }
