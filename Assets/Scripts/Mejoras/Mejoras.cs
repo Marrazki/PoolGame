@@ -4,6 +4,7 @@ public class Mejoras : MonoBehaviour
 {
     AudioManager audioManager;
     public int precio;
+    public string nombre;
     public string información;
 
     private void Awake()

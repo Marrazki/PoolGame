@@ -89,8 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4f1115e8b8d00469fa0cd024d952b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
   precio: 7
+  nombre: Bola Lisa +10
   "informaci\xF3n": 
+  panel: {fileID: 0}
 --- !u!114 &6606063017179999486
 MonoBehaviour:
   m_ObjectHideFlags: 0

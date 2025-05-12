@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   precio: 15
-  "informaci\xF3n": Obtienes un tiro extra
+  "informaci\xF3n": Tiro extra
 --- !u!114 &8928788160654488933
 MonoBehaviour:
   m_ObjectHideFlags: 0

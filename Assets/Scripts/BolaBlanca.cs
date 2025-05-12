@@ -18,8 +18,10 @@ public class BolaBlanca : MonoBehaviour
     {
         {
             if (collision.gameObject.CompareTag("BOLA"))
+            {
             Debug.Log("COLISIÓN");
             inventarioBools.UpdateRebotes();
+            }
         }
     }
 }
