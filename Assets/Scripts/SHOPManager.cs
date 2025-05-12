@@ -4,6 +4,7 @@ public class SHOPManager : MonoBehaviour
 {
     public GameManager gameManager;
     public InventarioBools inventarioBools;
+    public GameObject inventarioBoolsGO;
     public Randomizador randomizador;
     public AudioManager audioManager;
     [Header("PRECIOS DIAMANTES")]
@@ -40,7 +41,7 @@ public class SHOPManager : MonoBehaviour
                     inventarioBools.diamanteAgujeroNegro[i] = true;
                     inventarioBools.slot[i] = true;
                     GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
+                    diamanteTemp.transform.SetParent (inventarioBoolsGO.transform.GetChild(0).GetChild(i));
                     randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
@@ -62,7 +63,7 @@ public class SHOPManager : MonoBehaviour
                     inventarioBools.diamanteBolaLisaMas10[i] = true;
                     inventarioBools.slot[i] = true;
                     GameObject diamanteTemp = Instantiate(prefabDiamanteBolaLisaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
+                    diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
                     randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
@@ -83,7 +84,7 @@ public class SHOPManager : MonoBehaviour
                     inventarioBools.diamanteBolaRayadaMas10[i] = true;
                     inventarioBools.slot[i] = true;
                     GameObject diamanteTemp = Instantiate(prefabDiamanteBolaRayadaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
+                    diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
                     randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
@@ -104,7 +105,7 @@ public class SHOPManager : MonoBehaviour
                     inventarioBools.diamanteRebote[i] = true;
                     inventarioBools.slot[i] = true;
                     GameObject diamanteTemp = Instantiate(prefabDiamanteRebote.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
+                    diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
                     randomizador.imagenDiamanteRebote.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
@@ -125,7 +126,7 @@ public class SHOPManager : MonoBehaviour
                     inventarioBools.diamanteTiroRandom[i] = true;
                     inventarioBools.slot[i] = true;
                     GameObject diamanteTemp = Instantiate(prefabDiamanteTiroRandom.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
+                    diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
                     randomizador.imagenDiamanteTiroRandom.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;
@@ -146,7 +147,7 @@ public class SHOPManager : MonoBehaviour
                     inventarioBools.diamanteX3MULT[i] = true;
                     inventarioBools.slot[i] = true;
                     GameObject diamanteTemp = Instantiate(prefabDiamanteX3MULT.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
+                    diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
                     randomizador.imagenDiamanteX3MULT.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
                     return;

@@ -93,11 +93,10 @@ public class Hoyo : MonoBehaviour
                         inventarioBools.UpdateBolasRayadasPuntuacion();
                     }
                 }
-                if (bola.numero == -1)//DORADA
+                if (bola.numero == -1 & gameManager.tiros >= gameManager.tirosMax + gameManager.tirosExtra - 1)//DORADA
                 {
                     gameManager.multiplicador = gameManager.multiplicador * 2;
                     gameManager.dineroPlus = true;
-                    inventarioBools.UpdateBolasRayadasPuntuacion();
                 }
             }
         }

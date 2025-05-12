@@ -12,7 +12,7 @@ public class Diamantes : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
+      //  audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,14 +25,12 @@ public class Diamantes : MonoBehaviour
     {
         
     }
-    private void OnMouseEnter()
+    public void ShowPanel()
     {
-        Debug.Log("TRUE");
         panel.SetActive(true);
     }
-    private void OnMouseExit()
+    public void HidePanel()
     {
-        Debug.Log("FALSE");
         panel.SetActive(false);
     }
     public void Vender()

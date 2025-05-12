@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     }
     public void SiguienteFase()
     {
-        PuntuacionATirosMax();
+        PuntuacionATirosExtra();
         canvasUI.SetActive(true);
         canvasSHOP.SetActive(false);
         Debug.Log("Siguiente Fase, fase " + fase);
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         }
         randomizador.RandomizarSHOP();
     }
-    public void PuntuacionATirosMax()
+    public void PuntuacionATirosExtra()
     {
         for (int i = 1; i <= 16; i++)
         {
