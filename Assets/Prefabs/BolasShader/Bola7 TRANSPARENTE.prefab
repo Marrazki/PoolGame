@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2777702515620665264
+--- !u!1 &8412370387762952115
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3193112992591997133}
-  - component: {fileID: 1649798165331864843}
-  - component: {fileID: 1618322630959045336}
-  - component: {fileID: 8252337672139620365}
-  - component: {fileID: -540030220319279378}
-  - component: {fileID: 7972381586992171129}
+  - component: {fileID: 7041197938419290955}
+  - component: {fileID: 1872445002205492204}
+  - component: {fileID: 5360474831732703993}
+  - component: {fileID: 2866639672088504337}
+  - component: {fileID: -477391053522903702}
+  - component: {fileID: -8379611926898021331}
   m_Layer: 0
-  m_Name: Bola3
+  m_Name: Bola7 TRANSPARENTE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3193112992591997133
+--- !u!4 &7041197938419290955
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777702515620665264}
+  m_GameObject: {fileID: 8412370387762952115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
@@ -36,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1649798165331864843
+--- !u!33 &1872445002205492204
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777702515620665264}
+  m_GameObject: {fileID: 8412370387762952115}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1618322630959045336
+--- !u!23 &5360474831732703993
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777702515620665264}
+  m_GameObject: {fileID: 8412370387762952115}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c348c6f873a56094c893154ea92a5aed, type: 2}
+  - {fileID: 2100000, guid: fdb3ed3e21a8f16469c47578c405f82b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,13 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8252337672139620365
+--- !u!135 &2866639672088504337
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777702515620665264}
+  m_GameObject: {fileID: 8412370387762952115}
   m_Material: {fileID: 13400000, guid: e49ee5e2ca9ee9e43b9cb4bffc7b3e5b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -110,13 +110,13 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-540030220319279378
+--- !u!54 &-477391053522903702
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777702515620665264}
+  m_GameObject: {fileID: 8412370387762952115}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -137,17 +137,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &7972381586992171129
+--- !u!114 &-8379611926898021331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777702515620665264}
+  m_GameObject: {fileID: 8412370387762952115}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8dfb3666b5523d46a8ad5483daef955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numero: 3
+  numero: 7
   tipo: 0

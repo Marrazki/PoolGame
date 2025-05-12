@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2448620003730711569}
   - component: {fileID: 2916465037605378364}
   m_Layer: 0
-  m_Name: Bola2
+  m_Name: Bola2 TRANSPARENTE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 6204056617535801404}
   - component: {fileID: 5022227710854106905}
   m_Layer: 0
-  m_Name: Bola14
+  m_Name: Bola14 TRANSPARENTE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

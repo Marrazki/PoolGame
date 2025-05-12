@@ -111,4 +111,13 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void Rerol()
+    {
+        if (dinero >= 1)
+        {
+            dinero--;
+            randomizador.OcultarItems();
+            randomizador.RandomizarSHOP();
+        }
+    }
 }
