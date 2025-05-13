@@ -7,6 +7,12 @@ public class InventarioBools : MonoBehaviour
     public AudioManager audioManager;
     [Header("SLOTS")]
     public bool[] slot = new bool[6];
+    public GameObject slot1;
+    public GameObject slot2;
+    public GameObject slot3;
+    public GameObject slot4;
+    public GameObject slot5;
+    public GameObject slot6;
     [Header("DIAMANTES")]
     public bool[] diamanteAgujeroNegro = new bool[6];
     public bool[] diamanteBolaLisaMas10 = new bool[6];
@@ -111,18 +117,36 @@ public class InventarioBools : MonoBehaviour
     /*
     public void VenderDiamanteAgujeroNegro()
     {
-                if (inventarioBools.slot[i] == false)
-                {
-                    audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
-                    inventarioBools.diamanteAgujeroNegro[i] = true;
-                    inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
-                    diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
-                    return;
-                }
+        if (this.gameObject.transform.parent == slot1)
+        { 
+            slot[1] = false;
+            diamanteAgujeroNegro[1] = false;
+        }
+        if (this.gameObject.transform.parent == slot2)
+        {
+            slot[2] = false;
+            diamanteAgujeroNegro[2] = false;
+        }
+        if (this.gameObject.transform.parent == slot3)
+        {
+            slot[3] = false;
+            diamanteAgujeroNegro[3] = false;
+        }
+        if (this.gameObject.transform.parent == slot4)
+        {
+            slot[4] = false;
+            diamanteAgujeroNegro[4] = false;
+        }
+        if (this.gameObject.transform.parent == slot5)
+        {
+            slot[5] = false;
+            diamanteAgujeroNegro[5] = false;
+        }
+        if (this.gameObject.transform.parent == slot6)
+        {
+            slot[6] = false;
+            diamanteAgujeroNegro[6] = false;
+        }
     }
     public void VenderDiamanteBolaLisaMas10()
     {
