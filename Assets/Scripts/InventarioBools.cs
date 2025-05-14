@@ -114,7 +114,7 @@ public class InventarioBools : MonoBehaviour
         }
     }
     //VENDER
-    /*
+    
     public void VenderDiamanteAgujeroNegro()
     {
         if (this.gameObject.transform.parent == slot1)
@@ -150,107 +150,167 @@ public class InventarioBools : MonoBehaviour
     }
     public void VenderDiamanteBolaLisaMas10()
     {
-        if (gameManager.dinero >= preciodiamanteBolaLisaMas10)
+        if (this.gameObject.transform.parent == slot1)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                if (inventarioBools.slot[i] == false)
-                {
-                    audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - preciodiamanteBolaLisaMas10;
-                    inventarioBools.diamanteBolaLisaMas10[i] = true;
-                    inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaLisaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
-                    diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
-                    return;
-                }
-            }
+            slot[1] = false;
+            diamanteBolaLisaMas10[1] = false;
+        }
+        if (this.gameObject.transform.parent == slot2)
+        {
+            slot[2] = false;
+            diamanteBolaLisaMas10[2] = false;
+        }
+        if (this.gameObject.transform.parent == slot3)
+        {
+            slot[3] = false;
+            diamanteBolaLisaMas10[3] = false;
+        }
+        if (this.gameObject.transform.parent == slot4)
+        {
+            slot[4] = false;
+            diamanteBolaLisaMas10[4] = false;
+        }
+        if (this.gameObject.transform.parent == slot5)
+        {
+            slot[5] = false;
+            diamanteBolaLisaMas10[5] = false;
+        }
+        if (this.gameObject.transform.parent == slot6)
+        {
+            slot[6] = false;
+            diamanteBolaLisaMas10[6] = false;
         }
     }
     public void VenderDiamanteBolaRayadaMas10()
     {
-        if (gameManager.dinero >= preciodiamanteBolaRayadaMas10)
+        if (this.gameObject.transform.parent == slot1)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                if (inventarioBools.slot[i] == false)
-                {
-                    audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - preciodiamanteBolaRayadaMas10;
-                    inventarioBools.diamanteBolaRayadaMas10[i] = true;
-                    inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaRayadaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
-                    diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
-                    return;
-                }
-            }
+            slot[1] = false;
+            diamanteBolaRayadaMas10[1] = false;
+        }
+        if (this.gameObject.transform.parent == slot2)
+        {
+            slot[2] = false;
+            diamanteBolaRayadaMas10[2] = false;
+        }
+        if (this.gameObject.transform.parent == slot3)
+        {
+            slot[3] = false;
+            diamanteBolaRayadaMas10[3] = false;
+        }
+        if (this.gameObject.transform.parent == slot4)
+        {
+            slot[4] = false;
+            diamanteBolaRayadaMas10[4] = false;
+        }
+        if (this.gameObject.transform.parent == slot5)
+        {
+            slot[5] = false;
+            diamanteBolaRayadaMas10[5] = false;
+        }
+        if (this.gameObject.transform.parent == slot6)
+        {
+            slot[6] = false;
+            diamanteBolaRayadaMas10[6] = false;
         }
     }
     public void VenderDiamanteRebote()
     {
-        if (gameManager.dinero >= precioDiamanteRebote)
+        if (this.gameObject.transform.parent == slot1)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                if (inventarioBools.slot[i] == false)
-                {
-                    audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteRebote;
-                    inventarioBools.diamanteRebote[i] = true;
-                    inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteRebote.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteRebote.transform.localPosition = new Vector3(0, 1000, 0);
-                    diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
-                    return;
-                }
-            }
+            slot[1] = false;
+            diamanteRebote[1] = false;
+        }
+        if (this.gameObject.transform.parent == slot2)
+        {
+            slot[2] = false;
+            diamanteTiroRandom[2] = false;
+        }
+        if (this.gameObject.transform.parent == slot3)
+        {
+            slot[3] = false;
+            diamanteTiroRandom[3] = false;
+        }
+        if (this.gameObject.transform.parent == slot4)
+        {
+            slot[4] = false;
+            diamanteTiroRandom[4] = false;
+        }
+        if (this.gameObject.transform.parent == slot5)
+        {
+            slot[5] = false;
+            diamanteTiroRandom[5] = false;
+        }
+        if (this.gameObject.transform.parent == slot6)
+        {
+            slot[6] = false;
+            diamanteTiroRandom[6] = false;
         }
     }
     public void VenderDiamanteTiroRandom()
     {
-        if (gameManager.dinero >= precioDiamanteTiroRandom)
+        if (this.gameObject.transform.parent == slot1)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                if (inventarioBools.slot[i] == false)
-                {
-                    audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteTiroRandom;
-                    inventarioBools.diamanteTiroRandom[i] = true;
-                    inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteTiroRandom.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteTiroRandom.transform.localPosition = new Vector3(0, 1000, 0);
-                    diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
-                    return;
-                }
-            }
+            slot[1] = false;
+            diamanteTiroRandom[1] = false;
+        }
+        if (this.gameObject.transform.parent == slot2)
+        {
+            slot[2] = false;
+            diamanteTiroRandom[2] = false;
+        }
+        if (this.gameObject.transform.parent == slot3)
+        {
+            slot[3] = false;
+            diamanteTiroRandom[3] = false;
+        }
+        if (this.gameObject.transform.parent == slot4)
+        {
+            slot[4] = false;
+            diamanteTiroRandom[4] = false;
+        }
+        if (this.gameObject.transform.parent == slot5)
+        {
+            slot[5] = false;
+            diamanteTiroRandom[5] = false;
+        }
+        if (this.gameObject.transform.parent == slot6)
+        {
+            slot[6] = false;
+            diamanteTiroRandom[6] = false;
         }
     }
     public void VenderDiamanteX3MULT()
     {
-        if (gameManager.dinero >= precioDiamanteX3MULT)
+        if (this.gameObject.transform.parent == slot1)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                if (inventarioBools.slot[i] == false)
-                {
-                    audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteX3MULT;
-                    inventarioBools.diamanteX3MULT[i] = true;
-                    inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteX3MULT.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
-                    diamanteTemp.transform.parent = inventarioBools.transform;
-                    randomizador.imagenDiamanteX3MULT.transform.localPosition = new Vector3(0, 1000, 0);
-                    diamanteTemp.transform.localPosition = new Vector3(-500 + 200 * i, 350, 0);
-                    return;
-                }
-            }
+            slot[1] = false;
+            diamanteX3MULT[1] = false;
         }
-    }*/
+        if (this.gameObject.transform.parent == slot2)
+        {
+            slot[2] = false;
+            diamanteX3MULT[2] = false;
+        }
+        if (this.gameObject.transform.parent == slot3)
+        {
+            slot[3] = false;
+            diamanteX3MULT[3] = false;
+        }
+        if (this.gameObject.transform.parent == slot4)
+        {
+            slot[4] = false;
+            diamanteX3MULT[4] = false;
+        }
+        if (this.gameObject.transform.parent == slot5)
+        {
+            slot[5] = false;
+            diamanteX3MULT[5] = false;
+        }
+        if (this.gameObject.transform.parent == slot6)
+        {
+            slot[6] = false;
+            diamanteX3MULT[6] = false;
+        }
+    }
 }
