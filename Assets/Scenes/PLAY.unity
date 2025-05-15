@@ -6289,8 +6289,8 @@ MonoBehaviour:
   randomizador: {fileID: 1677994332}
   audioManager: {fileID: 6395950052399211370, guid: dfdf8f935c97d4e4f9e8f87c5ee4a016, type: 3}
   precioDiamanteAgujeroNegro: 15
-  preciodiamanteBolaLisaMas10: 7
-  preciodiamanteBolaRayadaMas10: 7
+  precioDiamanteBolaLisaMas10: 7
+  precioDiamanteBolaRayadaMas10: 7
   precioDiamanteRebote: 10
   precioDiamanteTiroRandom: 8
   precioDiamanteX3MULT: 13
@@ -14376,11 +14376,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 377463180295366946, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
-      value: DiamanteVacio6
+      value: DiamanteVacio5
       objectReference: {fileID: 0}
     - target: {fileID: 947932920712747508, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
-      value: DiamanteVacio4
+      value: DiamanteVacio3
       objectReference: {fileID: 0}
     - target: {fileID: 2517494301616456188, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
@@ -14388,28 +14388,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2746801234920637356, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
-      value: DiamanteVacio1
+      value: DiamanteVacio0
       objectReference: {fileID: 0}
     - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-      propertyPath: slot1
+      propertyPath: slot0
       value: 
       objectReference: {fileID: 544634067951989725}
     - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-      propertyPath: slot2
+      propertyPath: slot1
       value: 
       objectReference: {fileID: 544634067951989724}
     - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-      propertyPath: slot3
+      propertyPath: slot2
       value: 
       objectReference: {fileID: 544634067951989723}
     - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-      propertyPath: slot4
+      propertyPath: slot3
       value: 
       objectReference: {fileID: 544634067951989722}
     - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-      propertyPath: slot5
+      propertyPath: slot4
       value: 
       objectReference: {fileID: 544634067951989721}
+    - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
+      propertyPath: slot5
+      value: 
+      objectReference: {fileID: 544634067951989720}
     - target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: slot6
       value: 
@@ -14460,15 +14464,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278934980168630006, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
-      value: DiamanteVacio5
+      value: DiamanteVacio4
       objectReference: {fileID: 0}
     - target: {fileID: 7530827685497431119, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
-      value: DiamanteVacio3
+      value: DiamanteVacio2
       objectReference: {fileID: 0}
     - target: {fileID: 8012039629647238690, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
-      value: DiamanteVacio2
+      value: DiamanteVacio1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14530,6 +14534,10 @@ PrefabInstance:
       propertyPath: hoyo
       value: 
       objectReference: {fileID: 430777094}
+    - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
+      propertyPath: dinero
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2107610987237576390, guid: a5cf3f6d527f64d4e9fc100b10dd945d, type: 3}
       propertyPath: canvasUI
       value: 

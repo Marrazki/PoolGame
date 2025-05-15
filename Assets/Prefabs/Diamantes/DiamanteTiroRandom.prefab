@@ -500,9 +500,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2308603504517016602}
-        m_TargetAssemblyTypeName: Diamantes, Assembly-CSharp
-        m_MethodName: Vender
+      - m_Target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
+        m_TargetAssemblyTypeName: InventarioBools, Assembly-CSharp
+        m_MethodName: VenderDiamanteTiroRandom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

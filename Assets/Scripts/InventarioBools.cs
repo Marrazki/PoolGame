@@ -7,12 +7,12 @@ public class InventarioBools : MonoBehaviour
     public AudioManager audioManager;
     [Header("SLOTS")]
     public bool[] slot = new bool[6];
+    public GameObject slot0;
     public GameObject slot1;
     public GameObject slot2;
     public GameObject slot3;
     public GameObject slot4;
     public GameObject slot5;
-    public GameObject slot6;
     [Header("DIAMANTES")]
     public bool[] diamanteAgujeroNegro = new bool[6];
     public bool[] diamanteBolaLisaMas10 = new bool[6];
@@ -117,6 +117,15 @@ public class InventarioBools : MonoBehaviour
     
     public void VenderDiamanteAgujeroNegro()
     {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == slot0)
+        {
+            Debug.Log("VENTA1");
+            slot[0] = false;
+            diamanteAgujeroNegro[0] = false;
+            Debug.Log("VENTA2");
+        }
         if (this.gameObject.transform.parent == slot1)
         { 
             slot[1] = false;
@@ -142,14 +151,18 @@ public class InventarioBools : MonoBehaviour
             slot[5] = false;
             diamanteAgujeroNegro[5] = false;
         }
-        if (this.gameObject.transform.parent == slot6)
-        {
-            slot[6] = false;
-            diamanteAgujeroNegro[6] = false;
-        }
     }
     public void VenderDiamanteBolaLisaMas10()
     {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == slot0)
+        {
+            Debug.Log("VENTA1");
+            slot[0] = false;
+            diamanteBolaLisaMas10[0] = false;
+            Debug.Log("VENTA2");
+        }
         if (this.gameObject.transform.parent == slot1)
         {
             slot[1] = false;
@@ -175,14 +188,18 @@ public class InventarioBools : MonoBehaviour
             slot[5] = false;
             diamanteBolaLisaMas10[5] = false;
         }
-        if (this.gameObject.transform.parent == slot6)
-        {
-            slot[6] = false;
-            diamanteBolaLisaMas10[6] = false;
-        }
     }
     public void VenderDiamanteBolaRayadaMas10()
     {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == slot0)
+        {
+            Debug.Log("VENTA1");
+            slot[0] = false;
+            diamanteBolaRayadaMas10[0] = false;
+            Debug.Log("VENTA2");
+        }
         if (this.gameObject.transform.parent == slot1)
         {
             slot[1] = false;
@@ -208,14 +225,18 @@ public class InventarioBools : MonoBehaviour
             slot[5] = false;
             diamanteBolaRayadaMas10[5] = false;
         }
-        if (this.gameObject.transform.parent == slot6)
-        {
-            slot[6] = false;
-            diamanteBolaRayadaMas10[6] = false;
-        }
     }
     public void VenderDiamanteRebote()
     {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == slot0)
+        {
+            Debug.Log("VENTA1");
+            slot[0] = false;
+            diamanteTiroRandom[0] = false;
+            Debug.Log("VENTA2");
+        }
         if (this.gameObject.transform.parent == slot1)
         {
             slot[1] = false;
@@ -241,14 +262,18 @@ public class InventarioBools : MonoBehaviour
             slot[5] = false;
             diamanteTiroRandom[5] = false;
         }
-        if (this.gameObject.transform.parent == slot6)
-        {
-            slot[6] = false;
-            diamanteTiroRandom[6] = false;
-        }
     }
     public void VenderDiamanteTiroRandom()
     {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == slot0)
+        {
+            Debug.Log("VENTA1");
+            slot[0] = false;
+            diamanteTiroRandom[0] = false;
+            Debug.Log("VENTA2");
+        }
         if (this.gameObject.transform.parent == slot1)
         {
             slot[1] = false;
@@ -274,14 +299,18 @@ public class InventarioBools : MonoBehaviour
             slot[5] = false;
             diamanteTiroRandom[5] = false;
         }
-        if (this.gameObject.transform.parent == slot6)
-        {
-            slot[6] = false;
-            diamanteTiroRandom[6] = false;
-        }
     }
     public void VenderDiamanteX3MULT()
     {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == slot0)
+        {
+            Debug.Log("VENTA1");
+            slot[0] = false;
+            diamanteX3MULT[0] = false;
+            Debug.Log("VENTA2");
+        }
         if (this.gameObject.transform.parent == slot1)
         {
             slot[1] = false;
@@ -306,11 +335,6 @@ public class InventarioBools : MonoBehaviour
         {
             slot[5] = false;
             diamanteX3MULT[5] = false;
-        }
-        if (this.gameObject.transform.parent == slot6)
-        {
-            slot[6] = false;
-            diamanteX3MULT[6] = false;
         }
     }
 }
