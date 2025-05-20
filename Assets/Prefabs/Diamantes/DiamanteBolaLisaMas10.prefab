@@ -120,9 +120,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-        m_TargetAssemblyTypeName: InventarioBools, Assembly-CSharp
-        m_MethodName: VenderDiamanteAgujeroNegro
+      - m_Target: {fileID: 6606063017179999486}
+        m_TargetAssemblyTypeName: DiamanteBolaLisaMas10, Assembly-CSharp
+        m_MethodName: VenderDiamanteBolaLisaMas10
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -808,6 +808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f369914cec9d22b45afc98e56f29109e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  inventarioBools: {fileID: 0}
 --- !u!114 &2351560841281308791
 MonoBehaviour:
   m_ObjectHideFlags: 0

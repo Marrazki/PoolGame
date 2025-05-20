@@ -537,6 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a310783cfac904fb078093d5823e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  inventarioBools: {fileID: 0}
 --- !u!61 &7085932798252126027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -911,8 +913,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-        m_TargetAssemblyTypeName: InventarioBools, Assembly-CSharp
+      - m_Target: {fileID: 8354323132927377837}
+        m_TargetAssemblyTypeName: diamanteAgujeroNegro, Assembly-CSharp
         m_MethodName: VenderDiamanteAgujeroNegro
         m_Mode: 1
         m_Arguments:

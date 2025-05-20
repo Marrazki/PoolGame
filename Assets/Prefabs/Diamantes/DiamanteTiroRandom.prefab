@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe557852a24730e428a7246499e5b244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  inventarioBools: {fileID: 0}
 --- !u!114 &4522866478177927225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,8 +502,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4881298575622964763, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
-        m_TargetAssemblyTypeName: InventarioBools, Assembly-CSharp
+      - m_Target: {fileID: 8271542523305075823}
+        m_TargetAssemblyTypeName: DiamanteTiroRandom, Assembly-CSharp
         m_MethodName: VenderDiamanteTiroRandom
         m_Mode: 1
         m_Arguments:

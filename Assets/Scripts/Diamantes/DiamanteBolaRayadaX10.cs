@@ -1,7 +1,10 @@
+using Unity.Mathematics;
 using UnityEngine;
 
-public class diamanteBolaRayadaMas10 : MonoBehaviour
+public class DiamanteBolaRayadaMas10 : MonoBehaviour
 {
+    public GameManager gameManager;
+    public InventarioBools inventarioBools;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +15,42 @@ public class diamanteBolaRayadaMas10 : MonoBehaviour
     void Update()
     {
         
+    }
+    public void VenderDiamanteBolaRayadaMas10()
+    {
+        Debug.Log("VENTA");
+        gameManager.dinero++;
+        if (this.gameObject.transform.parent == inventarioBools.slot0)
+        {
+            Debug.Log("VENTA1");
+            inventarioBools.slot[0] = false;
+            inventarioBools.diamanteBolaRayadaMas10[0] = false;
+            Debug.Log("VENTA2");
+        }
+        if (this.gameObject.transform.parent == inventarioBools.slot1)
+        {
+            inventarioBools.slot[1] = false;
+            inventarioBools.diamanteBolaRayadaMas10[1] = false;
+        }
+        if (this.gameObject.transform.parent == inventarioBools.slot2)
+        {
+            inventarioBools.slot[2] = false;
+            inventarioBools.diamanteBolaRayadaMas10[2] = false;
+        }
+        if (this.gameObject.transform.parent == inventarioBools.slot3)
+        {
+            inventarioBools.slot[3] = false;
+            inventarioBools.diamanteBolaRayadaMas10[3] = false;
+        }
+        if (this.gameObject.transform.parent == inventarioBools.slot4)
+        {
+            inventarioBools.slot[4] = false;
+            inventarioBools.diamanteBolaRayadaMas10[4] = false;
+        }
+        if (this.gameObject.transform.parent == inventarioBools.slot5)
+        {
+            inventarioBools.slot[5] = false;
+            inventarioBools.diamanteBolaRayadaMas10[5] = false;
+        }
     }
 }
