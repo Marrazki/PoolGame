@@ -74,24 +74,21 @@ public class Hoyo : MonoBehaviour
         {
             gameManager.bolasEnLaMesa--;
             gameManager.bolasMetidasPorTiro++;
-            if (bola.numero <= 0)
+            if (bola.numero > 0)
             {
                 inventarioBools.UpdateTirosRandom();
                 if (bola.tipo == false)//LISA
                 {
-                    if (bola.tipo == false)//LISA
-                    {
-                        gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaLisaNivel);
-                        gameManager.puntuacionPorHoyo = (bola.numero + 10 * gameManager.bolaLisaNivel);
-                        gameManager.multiplicador = gameManager.multiplicador * 2;
-                        inventarioBools.UpdateBolasLisasPuntuacion();
-                    }
-                    if (bola.tipo == true)//RAYADA
-                    {
-                        gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaRayadaNivel);
-                        gameManager.multiplicador = gameManager.multiplicador * 2;
-                        inventarioBools.UpdateBolasRayadasPuntuacion();
-                    }
+                    gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaLisaNivel);
+                    gameManager.puntuacionPorHoyo = (bola.numero + 10 * gameManager.bolaLisaNivel);
+                    gameManager.multiplicador = gameManager.multiplicador * 2;
+                    inventarioBools.UpdateBolasLisasPuntuacion();
+                }
+                if (bola.tipo == true)//RAYADA
+                {
+                    gameManager.puntuacion += gameManager.multiplicador * (bola.numero + 10 * gameManager.bolaRayadaNivel);
+                    gameManager.multiplicador = gameManager.multiplicador * 2;
+                    inventarioBools.UpdateBolasRayadasPuntuacion();
                 }
                 if (bola.numero == -1 & gameManager.tiros >= gameManager.tirosMax + gameManager.tirosExtra - 1)//DORADA
                 {

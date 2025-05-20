@@ -49,7 +49,7 @@ public class SHOPManager : MonoBehaviour
             }
         }
     }
-    public void ComprardiamanteBolaLisaMas10()
+    public void ComprarDiamanteBolaLisaMas10()
     {
         if (gameManager.dinero >= precioDiamanteBolaLisaMas10)
         {
