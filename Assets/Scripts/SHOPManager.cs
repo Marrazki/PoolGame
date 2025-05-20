@@ -9,8 +9,8 @@ public class SHOPManager : MonoBehaviour
     public AudioManager audioManager;
     [Header("PRECIOS DIAMANTES")]
     public int precioDiamanteAgujeroNegro = 15;
-    public int preciodiamanteBolaLisaMas10 = 7;
-    public int preciodiamanteBolaRayadaMas10 = 7;
+    public int precioDiamanteBolaLisaMas10 = 7;
+    public int precioDiamanteBolaRayadaMas10 = 7;
     public int precioDiamanteRebote = 10;
     public int precioDiamanteTiroRandom = 8;
     public int precioDiamanteX3MULT = 30;
@@ -49,42 +49,42 @@ public class SHOPManager : MonoBehaviour
             }
         }
     }
-    public void ComprardiamanteBolaLisaMas10()
+    public void ComprarDiamanteBolaLisaMas10()
     {
-        if (gameManager.dinero >= precioDiamanteAgujeroNegro)
+        if (gameManager.dinero >= precioDiamanteBolaLisaMas10)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
                     audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
+                    gameManager.dinero = gameManager.dinero - precioDiamanteBolaLisaMas10;
                     inventarioBools.diamanteBolaLisaMas10[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaLisaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
-                    randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteBolaLisaMas10.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = Vector3.zero;
                     return;
                 }
             }
         }
     }
-    public void ComprardiamanteBolaRayadaMas10()
+    public void ComprarDiamanteBolaRayadaMas10()
     {
-        if (gameManager.dinero >= precioDiamanteAgujeroNegro)
+        if (gameManager.dinero >= precioDiamanteBolaRayadaMas10)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
                     audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
+                    gameManager.dinero = gameManager.dinero - precioDiamanteBolaRayadaMas10;
                     inventarioBools.diamanteBolaRayadaMas10[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteBolaRayadaMas10.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
-                    randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteBolaRayadaMas10.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = Vector3.zero;
                     return;
                 }
@@ -93,19 +93,19 @@ public class SHOPManager : MonoBehaviour
     }
     public void ComprarDiamanteRebote()
     {
-        if (gameManager.dinero >= precioDiamanteAgujeroNegro)
+        if (gameManager.dinero >= precioDiamanteRebote)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
                     audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
+                    gameManager.dinero = gameManager.dinero - precioDiamanteRebote;
                     inventarioBools.diamanteRebote[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteRebote.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
-                    randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteRebote.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = Vector3.zero;
                     return;
                 }
@@ -114,19 +114,19 @@ public class SHOPManager : MonoBehaviour
     }
     public void ComprarDiamanteTiroRandom()
     {
-        if (gameManager.dinero >= precioDiamanteAgujeroNegro)
+        if (gameManager.dinero >= precioDiamanteTiroRandom)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
                     audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
+                    gameManager.dinero = gameManager.dinero - precioDiamanteTiroRandom;
                     inventarioBools.diamanteTiroRandom[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteTiroRandom.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
-                    randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteTiroRandom.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = Vector3.zero;
                     return;
                 }
@@ -135,19 +135,19 @@ public class SHOPManager : MonoBehaviour
     }
     public void ComprarDiamanteX3MULT()
     {
-        if (gameManager.dinero >= precioDiamanteAgujeroNegro)
+        if (gameManager.dinero >= precioDiamanteX3MULT)
         {
             for (int i = 0; i < 7; i++)
             {
                 if (inventarioBools.slot[i] == false)
                 {
                     audioManager.PlaySFX(audioManager.dinero);
-                    gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
+                    gameManager.dinero = gameManager.dinero - precioDiamanteX3MULT;
                     inventarioBools.diamanteX3MULT[i] = true;
                     inventarioBools.slot[i] = true;
-                    GameObject diamanteTemp = Instantiate(prefabDiamanteAgujeroNegro.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
+                    GameObject diamanteTemp = Instantiate(prefabDiamanteX3MULT.gameObject, new Vector3(0, 0, 0), new Quaternion(0f, 0f, 0f, 1f)) as GameObject;
                     diamanteTemp.transform.SetParent(inventarioBoolsGO.transform.GetChild(0).GetChild(i));
-                    randomizador.imagenDiamanteAgujeroNegro.transform.localPosition = new Vector3(0, 1000, 0);
+                    randomizador.imagenDiamanteX3MULT.transform.localPosition = new Vector3(0, 1000, 0);
                     diamanteTemp.transform.localPosition = Vector3.zero;
                     return;
                 }

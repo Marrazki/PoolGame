@@ -6289,8 +6289,8 @@ MonoBehaviour:
   randomizador: {fileID: 1677994332}
   audioManager: {fileID: 6395950052399211370, guid: dfdf8f935c97d4e4f9e8f87c5ee4a016, type: 3}
   precioDiamanteAgujeroNegro: 15
-  preciodiamanteBolaLisaMas10: 7
-  preciodiamanteBolaRayadaMas10: 7
+  precioDiamanteBolaLisaMas10: 7
+  precioDiamanteBolaRayadaMas10: 7
   precioDiamanteRebote: 10
   precioDiamanteTiroRandom: 8
   precioDiamanteX3MULT: 13
@@ -7516,7 +7516,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 867091253}
         m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
-        m_MethodName: ComprardiamanteBolaRayadaMas10
+        m_MethodName: ComprarDiamanteBolaRayadaMas10
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13459,7 +13459,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 867091253}
         m_TargetAssemblyTypeName: SHOPManager, Assembly-CSharp
-        m_MethodName: ComprardiamanteBolaLisaMas10
+        m_MethodName: ComprarDiamanteBolaLisaMas10
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

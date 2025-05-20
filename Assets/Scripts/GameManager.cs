@@ -51,8 +51,8 @@ public class GameManager : MonoBehaviour
         fuerza = 2;
         puntuacion = 0;
         puntuacionPorHoyo = 0;
-        bolaLisaNivel = 0;
-        bolaRayadaNivel = 0;
+        bolaLisaNivel = 1;
+        bolaRayadaNivel = 1;
         bolasEnLaMesa = 0;
         bolasQueCrear = 1;
         fase = 1;
