@@ -14386,6 +14386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventarioBools
       objectReference: {fileID: 0}
+    - target: {fileID: 2517494301616456188, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
+      propertyPath: m_TagString
+      value: INVENTARIOBOOLS
+      objectReference: {fileID: 0}
     - target: {fileID: 2746801234920637356, guid: d407d2abd665fcc4cb43fdbed6557c89, type: 3}
       propertyPath: m_Name
       value: DiamanteVacio0
