@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     int naiara = 688821895;
     public int dinero = 0;
     public bool dineroPlus;
+    public Animator animator;
     private void Awake()
     {
         //Singleton
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
     }
     public void SiguienteFase()
     {
+        animator.SetTrigger("Ha dejado de ganar");
         PuntuacionATirosExtra();
         canvasUI.SetActive(true);
         canvasSHOP.SetActive(false);
@@ -98,7 +100,9 @@ public class GameManager : MonoBehaviour
         if (dineroPlus)
         {
             dinero = +tiros + fase;
+            
         }
+        animator.SetTrigger("HaGanadoPasta");
         randomizador.RandomizarSHOP();
     }
     public void PuntuacionATirosExtra()
