@@ -37,7 +37,7 @@ public class Randomizador : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

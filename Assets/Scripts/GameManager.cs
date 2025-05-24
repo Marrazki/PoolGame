@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
     // Start is called before the first frame update
@@ -63,11 +63,23 @@ public class GameManager : MonoBehaviour
         canvasUI.SetActive(true);
         canvasSHOP.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void StartPlay()
     {
-
+        tiros = 10;
+        tirosMax = 10;
+        fuerza = 2;
+        puntuacion = 0;
+        puntuacionPorHoyo = 0;
+        bolaLisaNivel = 1;
+        bolaRayadaNivel = 1;
+        bolasEnLaMesa = 0;
+        bolasQueCrear = 1;
+        fase = 1;
+        multiplicador = 1;
+        bolasMetidasPorTiro = 0;
+        dineroPlus = false;
+        canvasUI.SetActive(true);
+        canvasSHOP.SetActive(false);
     }
     public void Perder()
     {
@@ -100,7 +112,7 @@ public class GameManager : MonoBehaviour
         if (dineroPlus)
         {
             dinero = +tiros + fase;
-            
+
         }
         animator.SetTrigger("HaGanadoPasta");
         randomizador.RandomizarSHOP();

@@ -41,9 +41,9 @@ public class Tiro : MonoBehaviour
         }
         if (gravedad.bolaQuieta == true)
         {
-            if (gameManager.tiros >= 0)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (gameManager.tiros >= 0)
                 {
                     Debug.Log("PEIO TIRAR BOLA 1");
                     audioManager.PlaySFX(audioManager.tiro);
@@ -59,6 +59,10 @@ public class Tiro : MonoBehaviour
                     gameManager.bolasMetidasPorTiro = 0;
                     Debug.Log("PEIO TIRAR BOLA 3");
                     inventarioBools.UpdateDiamantes();
+                }
+                if (gameManager.tiros < 0)
+                {
+                    gameManager.Perder();
                 }
             }
         }

@@ -19,7 +19,7 @@ public class Gravedad : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

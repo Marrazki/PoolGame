@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuOptions : MonoBehaviour
 {
     AudioManager audioManager;
+    public GameManager gameManager;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
@@ -21,7 +22,9 @@ public class MenuOptions : MonoBehaviour
     }
     public void GoToMenu()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GAMEMANAGER").GetComponent<GameManager>();
         audioManager.PlaySFX(audioManager.Click);
         SceneManager.LoadSceneAsync("MENU");
+        gameManager.StartPlay();
     }
 }
