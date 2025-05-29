@@ -24,6 +24,8 @@ public class SHOPManager : MonoBehaviour
     public GameObject prefabDiamanteTiroRandom;
     public GameObject prefabDiamanteX3MULT;
     public GameObject prefabDiamanteVacio;
+
+    [SerializeField] private ParticleSystem particulaConfetti;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("AUDIO").GetComponent<AudioManager>();
@@ -36,6 +38,7 @@ public class SHOPManager : MonoBehaviour
             {
                 if (inventarioBools.slot[i] == false)
                 {
+                    particulaConfetti.Play();
                     audioManager.PlaySFX(audioManager.dinero);
                     gameManager.dinero = gameManager.dinero - precioDiamanteAgujeroNegro;
                     inventarioBools.diamanteAgujeroNegro[i] = true;
