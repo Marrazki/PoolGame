@@ -13,6 +13,7 @@ public class Camara : MonoBehaviour
     public GameObject posBolaCamara;
     public float posBolaCamaraX;
     public float posBolaCamaraZ;
+    public Material miMaterialSkybox;
     // Start is called before the first frame update
     void Start()
     {
