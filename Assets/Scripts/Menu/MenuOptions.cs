@@ -22,9 +22,9 @@ public class MenuOptions : MonoBehaviour
     }
     public void GoToMenu()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GAMEMANAGER").GetComponent<GameManager>();
+        //gameManager = GameObject.FindGameObjectWithTag("GAMEMANAGER").GetComponent<GameManager>();
         audioManager.PlaySFX(audioManager.Click);
         SceneManager.LoadSceneAsync("MENU");
-        gameManager.StartPlay();
+        //gameManager.StartPlay();
     }
 }
